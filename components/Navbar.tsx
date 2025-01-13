@@ -1,8 +1,10 @@
 export default function Navbar() {
   return (
-    <nav class={`flex w-full`}>
-      <header class={``}></header>
-      <ul class={``}></ul>
-    </nav>
+    <header class={`flex w-full `}>
+      <h1 class={``}></h1>
+      <nav>
+        <ul class={``}></ul>
+      </nav>
+    </header>
   );
 }
