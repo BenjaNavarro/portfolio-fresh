@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header
-      class={`flex w-full justify-between sticky  top-0 bottom-0 items-center p-4 transition-all duration-500 z-20`}
+      class={`flex w-[99%] justify-between items-center sticky top-4 shadow-lg backdrop-filter backdrop-blur-lg bg-transparent p-4 z-20 mx-2 mt-4 rounded border-0 dark:border border-gray-50`}
     >
       <h1 class="w-auto">TITLE</h1>
       <nav class="flex w-fit justify-end">
@@ -25,13 +25,13 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
-      <div class={`flex`}>
+      <div class="flex">
         <button
-          class={`w-8 p-1 m-1 flex items-center justify-center`}
+          class="w-8 p-1 m-1 flex items-center justify-center"
           aria-label="Toggle Dark Mode"
           onClick={toggleTheme}
         >
-          <Dark class={`cursor-[inherit]`} />
+          <Dark class="cursor-[inherit]" />
         </button>
       </div>
     </header>

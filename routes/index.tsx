@@ -1,4 +1,3 @@
-import { useMemo } from "preact/hooks";
 import Navbar from "../islands/Navbar.tsx";
 import Start from "../components/Start.tsx";
 import About from "../components/About.tsx";
