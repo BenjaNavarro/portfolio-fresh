@@ -4,4 +4,14 @@ export default {
   content: [
     "{routes,islands,components}/**/*.{ts,tsx,js,jsx}",
   ],
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+    },
+  },
+  plugins: [],
+  darkMode: "class",
 } satisfies Config;

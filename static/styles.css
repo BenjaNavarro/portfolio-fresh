@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body::selection {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* header {
+  animation: nav-shadown 1s linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
+}
+
+@keyframes nav-shadown {
+  to {
+    @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+  }
+} */
