@@ -1,15 +1,21 @@
 import Dark from "../components/Icons/Dark.tsx";
 
-export default function Navbar() {
+declare interface ComponentProps {
+  handleScroll: (e: Event) => void;
+}
+
+export default function Navbar({
+  handleScroll,
+}: ComponentProps) {
 
   const toggleTheme = () => {
     globalThis.document.documentElement.classList.toggle("dark");
   };
 
   const NavOptions = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { label: "Home", name: "start" },
+    { label: "About", name: "about" },
+    { label: "Contact", name: "experience" },
   ];
 
   return (
@@ -20,8 +26,11 @@ export default function Navbar() {
       <nav class="flex w-fit justify-end">
         <ul class="flex w-full gap-4 justify-end">
           {NavOptions.map((option) => (
-            <li key={option.name}>
-              <a href={option.href}>{option.name}</a>
+            <li key={option.label}>
+              <button 
+                name={option.name} 
+                onClick={handleScroll}
+              >{option.label}</button>
             </li>
           ))}
         </ul>

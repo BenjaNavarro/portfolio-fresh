@@ -7,8 +7,12 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $About from "./islands/About.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $Experience from "./islands/Experience.tsx";
+import * as $MainLand from "./islands/MainLand.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
+import * as $Start from "./islands/Start.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,8 +24,12 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/About.tsx": $About,
     "./islands/Counter.tsx": $Counter,
+    "./islands/Experience.tsx": $Experience,
+    "./islands/MainLand.tsx": $MainLand,
     "./islands/Navbar.tsx": $Navbar,
+    "./islands/Start.tsx": $Start,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

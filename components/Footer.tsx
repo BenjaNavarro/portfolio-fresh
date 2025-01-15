@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div class="flex gap-2 w-full items-center justify-center">
+    <footer class="flex gap-2 w-full items-center justify-center">
       <img
         class="my-6"
         src="/logo.svg"
@@ -11,6 +11,6 @@ export default function Footer() {
       <p class="font-semibold">
         Made with fresh
       </p>
-    </div>
+    </footer>
   );
 }
