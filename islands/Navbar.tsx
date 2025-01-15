@@ -1,4 +1,3 @@
-// import { useSignal } from '@preact/signals';
 import { useState } from 'preact/hooks';
 
 import HamburguerBtn from "../components/HamburguerBtn.tsx";
@@ -14,7 +13,6 @@ export default function Navbar({
 }: ComponentProps) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [currentTheme, setCurrentTheme] = useState<boolean>(globalThis?.document?.documentElement?.classList?.contains("dark"));
-  // const currentTheme = useSignal(globalThis?.document?.documentElement?.classList?.contains("dark"));
 
   const toggleTheme = () => {
     globalThis.document.documentElement.classList.toggle("dark");
@@ -24,7 +22,8 @@ export default function Navbar({
   const NavOptions = [
     { label: "Home", name: "start" },
     { label: "About", name: "about" },
-    { label: "Contact", name: "experience" },
+    { label: "Experience", name: "experience" },
+    { label: "Contact", name: "contact" },
   ];
 
   return (
@@ -33,7 +32,7 @@ export default function Navbar({
     >
       <h1 class="w-auto flex items-center">
         BENJA
-        <span class={`ml-2 animate-wiggle`}>💻</span>
+        <span class={`ml-2 animate-wiggle text-xl`}>💻</span>
       </h1>
       <nav class="flex w-fit justify-end">
         <ul class="hidden md:flex w-full gap-4 justify-end">
@@ -68,7 +67,12 @@ export default function Navbar({
               aria-label="Toggle Dark Mode"
               onClick={toggleTheme}
             >
-              <Dark class="cursor-[inherit]" />
+              {currentTheme &&
+                <Dark class="cursor-[inherit] w-6 h-6"/>
+              }
+              {!currentTheme &&
+                <Light class="cursor-[inherit] w-6 h-6"/>
+              }
             </button>
           </li>
         </ul>
@@ -80,10 +84,10 @@ export default function Navbar({
           onClick={toggleTheme}
         >
           {currentTheme &&
-            <Dark class="cursor-[inherit]"/>
+            <Dark class="cursor-[inherit] w-6 h-6"/>
           }
           {!currentTheme &&
-            <Light class="cursor-[inherit]"/>
+            <Light class="cursor-[inherit] w-6 h-6"/>
           }
         </button>
       </div>
