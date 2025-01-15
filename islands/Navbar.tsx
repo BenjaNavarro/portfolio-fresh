@@ -1,4 +1,4 @@
-import { useSignal } from '@preact/signals';
+// import { useSignal } from '@preact/signals';
 import { useState } from 'preact/hooks';
 
 import HamburguerBtn from "../components/HamburguerBtn.tsx";
@@ -13,11 +13,12 @@ export default function Navbar({
   handleScroll,
 }: ComponentProps) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const currentTheme = useSignal(globalThis?.document?.documentElement?.classList?.contains("dark"));
+  const [currentTheme, setCurrentTheme] = useState<boolean>(globalThis?.document?.documentElement?.classList?.contains("dark"));
+  // const currentTheme = useSignal(globalThis?.document?.documentElement?.classList?.contains("dark"));
 
   const toggleTheme = () => {
     globalThis.document.documentElement.classList.toggle("dark");
-    currentTheme.value = !currentTheme.value;
+    setCurrentTheme(!currentTheme);
   };
 
   const NavOptions = [
@@ -78,10 +79,10 @@ export default function Navbar({
           aria-label="Toggle Dark Mode"
           onClick={toggleTheme}
         >
-          {currentTheme.value &&
+          {currentTheme &&
             <Dark class="cursor-[inherit]"/>
           }
-          {!currentTheme.value &&
+          {!currentTheme &&
             <Light class="cursor-[inherit]"/>
           }
         </button>

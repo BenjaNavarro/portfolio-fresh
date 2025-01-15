@@ -8,7 +8,7 @@ declare interface ComponentProps {
 export default function Start({ ref }: ComponentProps) {
   return (
     <section 
-      class={`min-h-[calc(100vh-12vh)] flex flex-col justify-center items-center`}
+      class={`min-h-[calc(100vh-12vh)] md:min-h-[calc(100vh-8vh)] flex flex-col justify-center items-center`}
       ref={ref}
     >
       <div class={`flex w-full justify-center md:justify-start items-center text-2xl sm:text-3xl mb-24`}>
