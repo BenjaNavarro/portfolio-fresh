@@ -17,9 +17,27 @@ body {
   color: var(--text-color);
 }
 
-body::selection {
+*::selection {
   background-color: var(--text-color);
   color: var(--background-color);
+}
+
+.closure::after {
+  content: '';
+  position: absolute;
+  height: 25vmin;
+  width: 14ch;
+  background: inherit;
+  transform: translate(-20vmin, -24.5vmin);
+}
+
+.closure::before {
+  content: '';
+  position: absolute;
+  height: 25vmin;
+  width: 14ch;
+  background: inherit;
+  transform: translate(-20vmin, 3vmin);
 }
 
 @layer components {
@@ -29,5 +47,13 @@ body::selection {
 
   .fixed-header {
     @apply sticky top-4
+  }
+
+  .closure-before {
+    @apply before:absolute before:content-[] before:h-[25vmin] before:w-[14ch] before:translate-y-[5vmin] before:bg-[inherit]
+  }
+
+  .closure-after {
+    @apply after:absolute after:h-[25vmin] after:w-[14ch] after:translate-y-[-24.5vmin] after:content-[''] after:bg-[inherit]
   }
 }
