@@ -22,14 +22,12 @@ body::selection {
   color: var(--background-color);
 }
 
-/* header {
-  animation: nav-shadown 1s linear both;
-  animation-timeline: scroll();
-  animation-range: 0 500px;
-}
-
-@keyframes nav-shadown {
-  to {
-    @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+@layer components {
+  .header {
+    @apply flex w-[99%] justify-between items-center shadow-lg backdrop-filter backdrop-blur-lg bg-transparent p-4 z-20 mx-2 mt-4 rounded-lg border-0 dark:border border-gray-50 max-h-[10vh] transition-all duration-300
   }
-} */
+
+  .fixed-header {
+    @apply sticky top-4
+  }
+}

@@ -1,6 +1,7 @@
 import Dark from "../components/Icons/Dark.tsx";
 
 export default function Navbar() {
+
   const toggleTheme = () => {
     globalThis.document.documentElement.classList.toggle("dark");
   };
@@ -13,7 +14,7 @@ export default function Navbar() {
 
   return (
     <header
-      class={`flex w-[99%] justify-between items-center sticky top-4 shadow-lg backdrop-filter backdrop-blur-lg bg-transparent p-4 z-20 mx-2 mt-4 rounded border-0 dark:border border-gray-50`}
+      class={`header fixed-header`}
     >
       <h1 class="w-auto">TITLE</h1>
       <nav class="flex w-fit justify-end">

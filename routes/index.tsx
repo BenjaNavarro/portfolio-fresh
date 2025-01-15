@@ -7,8 +7,8 @@ import Footer from "../components/Footer.tsx";
 export default function Home() {
   return (
     <main class="w-full flex flex-col min-h-screen">
-      <Navbar />
       <Start />
+      <Navbar />
       <About />
       <Experience />
       <Footer />
