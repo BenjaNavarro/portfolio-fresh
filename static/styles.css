@@ -22,38 +22,80 @@ body {
   color: var(--background-color);
 }
 
-.closure::after {
-  content: '';
-  position: absolute;
-  height: 25vmin;
-  width: 14ch;
-  background: inherit;
-  transform: translate(-20vmin, -24.5vmin);
+@media screen and (min-width: 480px) {
+  .closure::after {
+    content: '';
+    position: absolute;
+    height: 6rem;
+    width: 12rem;
+    background: inherit;
+    transform: translate(-13rem, -5.5rem);
+  }
+  
+  .closure::before {
+    content: '';
+    position: absolute;
+    height: 6rem;
+    width: 12rem;
+    background: inherit;
+    transform: translate(-10rem, 2rem);
+  }
 }
 
-.closure::before {
-  content: '';
-  position: absolute;
-  height: 25vmin;
-  width: 14ch;
-  background: inherit;
-  transform: translate(-20vmin, 3vmin);
+
+@media screen and (max-width: 480px) {
+  .closure::after {
+    content: '';
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    background: inherit;
+    transform: translate(-8rem, -5.8rem);
+  }
+
+  .closure::before {
+    content: '';
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    background: inherit;
+    transform: translate(-5.75rem, 1.2rem);
+  } 
 }
 
 @layer components {
   .header {
-    @apply flex w-[99%] justify-between items-center shadow-lg backdrop-filter backdrop-blur-lg bg-transparent p-4 z-20 mx-2 mt-4 rounded-lg border-0 dark:border border-gray-50 max-h-[10vh] transition-all duration-300
+    @apply fixed top-0 md:sticky md:top-4 flex w-[95%] md:w-[99%] justify-between items-center shadow-lg backdrop-filter 
+    backdrop-blur-lg bg-transparent py-4 px-20 z-20 mx-auto rounded-lg border-0 dark:border border-gray-50 max-h-[10vh] 
+    transition-all duration-300
   }
 
-  .fixed-header {
-    @apply sticky top-4
+  /* SCROLL BAR */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--background-color) var(--text-color);
   }
 
-  .closure-before {
-    @apply before:absolute before:content-[] before:h-[25vmin] before:w-[14ch] before:translate-y-[5vmin] before:bg-[inherit]
+  .scrollbar-thin::-webkit-scrollbar {
+    @apply w-1 h-1;
   }
 
-  .closure-after {
-    @apply after:absolute after:h-[25vmin] after:w-[14ch] after:translate-y-[-24.5vmin] after:content-[''] after:bg-[inherit]
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-400;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-[var(--text-color)] rounded-full border-2 border-gray-500;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-[var(--background-color)];
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:active {
+    @apply bg-[var(--background-color)];
+  }
+  * {
+    @apply scrollbar-thin;
   }
 }

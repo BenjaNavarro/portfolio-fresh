@@ -1,4 +1,5 @@
 import { JSX } from "preact";
+
 export default function Dark(props: JSX.HTMLAttributes<SVGSVGElement>) {
   return (
     <svg
