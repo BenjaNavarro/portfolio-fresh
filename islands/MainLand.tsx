@@ -7,6 +7,7 @@ import Experience from "./Experience.tsx";
 import Footer from "../components/Footer.tsx";
 import { CustomRef } from "../types.d.ts";
 import Contact from "./Contact.tsx";
+import { LanguageProvider } from "../context/languageContext.tsx";
 
 export default function MainLand() {
     const startRef = useRef<CustomRef | null>(null);
@@ -25,13 +26,15 @@ export default function MainLand() {
   };
 
   return (
-    <div class="w-full flex flex-col items-center min-h-screen">
-      <Start ref={startRef as MutableRef<HTMLElement | null>} />
-      <Navbar handleScroll={handleScroll}/>
-      <About ref={aboutRef as MutableRef<HTMLElement | null>}/>
-      <Experience ref={experienceRef as MutableRef<HTMLElement | null>}/>
-      <Contact ref={contactRef as MutableRef<HTMLFormElement | null>}/>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div class="w-full flex flex-col items-center min-h-screen">
+        <Start ref={startRef as MutableRef<HTMLElement | null>} />
+        <Navbar handleScroll={handleScroll}/>
+        <About ref={aboutRef as MutableRef<HTMLElement | null>}/>
+        <Experience ref={experienceRef as MutableRef<HTMLElement | null>}/>
+        <Contact ref={contactRef as MutableRef<HTMLFormElement | null>}/>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

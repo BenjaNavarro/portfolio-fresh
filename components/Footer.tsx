@@ -1,7 +1,10 @@
+import { useContext } from "preact/hooks";
 import Github from "./Icons/Github.tsx";
 import Linkedin from "./Icons/Linkedin.tsx";
+import { LanguageContext } from "../context/languageContext.tsx";
 
 export default function Footer() {
+  const { dictionary } = useContext(LanguageContext);
   return (
     <footer class="flex flex-col items-center w-full p-4 gap-2 bg-neutral-300 border-t border-neutral-400 dark:bg-neutral-700 dark:border-neutral-600">
       <a
@@ -17,7 +20,7 @@ export default function Footer() {
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
         <p class="font-semibold">
-          Made with fresh
+          {dictionary.footer.$fresh}
         </p>
       </a>
       <div class={`flex w-full items-center justify-center gap-4`}>
@@ -36,6 +39,9 @@ export default function Footer() {
           <Linkedin class={`w-8 h-8 cursor-pointer hover:animate-bounce`}/>
         </a>
       </div>
+      <span class={`text-center flex gap-1`}>
+        <span class={`font-semibold`}>Benjamín Navarro</span><h4 class={`font-normal`}>{dictionary.footer.rights}</h4> © {new Date().getFullYear()}
+      </span>
     </footer>
   );
 }
