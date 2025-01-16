@@ -24,6 +24,10 @@ export default {
           '25%': {transform: 'translateY(-2.2ch)'},
           '50%': {transform: 'translateY(-4.5ch)'},
           '75%': {transform: 'translateY(-7ch)'},
+        },
+        highlight: {
+          'from': { background: 'var(--input-color)' },
+          'to': { width: '0', background: 'transparent' }
         }
       },
       animation: {
@@ -31,6 +35,7 @@ export default {
         move: 'move 7s infinite',
         'move-sm': 'move-sm 7s infinite',
         'white-out': 'white-out 5s infinite',
+        highlight: 'highlight 0.3 ease'
       },
       screens: {
         'xs': '480px',

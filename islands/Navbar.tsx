@@ -1,18 +1,21 @@
-import { useState } from 'preact/hooks';
+import { useRef, useState } from 'preact/hooks';
 
 import HamburguerBtn from "../components/HamburguerBtn.tsx";
 import Dark from "../components/Icons/Dark.tsx";
 import Light from "../components/Icons/Light.tsx";
+import { useOutsideClickClose } from "../hooks/handleClickOutside.tsx";
 
 declare interface ComponentProps {
   handleScroll: (e: Event) => void;
-}
+};
 
 export default function Navbar({
   handleScroll,
 }: ComponentProps) {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
   const [currentTheme, setCurrentTheme] = useState<boolean>(globalThis?.document?.documentElement?.classList?.contains("dark"));
+
+  useOutsideClickClose(dialogRef);
 
   const toggleTheme = () => {
     globalThis.document.documentElement.classList.toggle("dark");
@@ -45,38 +48,50 @@ export default function Navbar({
             </li>
           ))}
         </ul>
-        <HamburguerBtn toggleMenu={() => setShowMenu(!showMenu)}/>
+        <HamburguerBtn 
+          toggleMenu={() => {
+            console.log('🍋‍🟩', dialogRef?.current?.close, dialogRef?.current?.show, dialogRef?.current?.open);
+            
+            if(dialogRef?.current?.open) dialogRef.current?.close();
+            else dialogRef?.current?.show();
+          }}/>
       </nav>
-      <nav 
-        class={`${!showMenu ? 'hidden': 'absolute top-16 right-0 mt-4 z-50'} w-[90%] md:hidden shadow-lg rounded-lg bg-[var(--background-color)]`}
-        id="navbar-hamburger"
+      <dialog
+        class={`p-2 rounded-lg bg-[var(--background-color)] z-[60] absolute top-16 -right-44 shadow-lg border border-neutral-400`}
+        ref={dialogRef}
+        aria-labelledby="navbar-hamburger"
       >
-        <ul class="flex flex-col font-medium mt-4">
-          {NavOptions.map((option) => (
-            <li key={option.label}>
-              <button 
-                name={option.name} 
-                onClick={handleScroll}
-                class="block py-2 px-3 rounded dark:hover:text-white"
-              >{option.label}</button>
+        <nav 
+          class={`bg-inherit flex flex-col justify-center items-center`}
+          id="navbar-hamburger"
+        >
+          <ul class="flex flex-col font-medium mt-4 gap-2">
+            {NavOptions.map((option) => (
+              <li key={option.label}>
+                <button 
+                  name={option.name} 
+                  onClick={handleScroll}
+                  class="w-full text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
+                >{option.label}</button>
+              </li>
+            ))}
+            <li>
+              <button
+                class="flex items-center justify-start w-full text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
+                aria-label="Toggle Dark Mode"
+                onClick={toggleTheme}
+              >
+                {currentTheme &&
+                  <Dark class="cursor-[inherit] w-6 h-6"/>
+                }
+                {!currentTheme &&
+                  <Light class="cursor-[inherit] w-6 h-6"/>
+                }
+              </button>
             </li>
-          ))}
-          <li>
-            <button
-              class="w-8 p-1 m-1 flex items-center justify-center"
-              aria-label="Toggle Dark Mode"
-              onClick={toggleTheme}
-            >
-              {currentTheme &&
-                <Dark class="cursor-[inherit] w-6 h-6"/>
-              }
-              {!currentTheme &&
-                <Light class="cursor-[inherit] w-6 h-6"/>
-              }
-            </button>
-          </li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </dialog>
       <div class="hidden md:flex">
         <button
           class="w-8 p-1 m-1 flex items-center justify-center"

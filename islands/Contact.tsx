@@ -30,39 +30,55 @@ export default function Contact({ ref }: ComponentProps) {
             onSubmit={handleSubmit} 
             ref={ref}
         >
-            <h2 class={`text-2xl font-semibold`}>Contact</h2>
+            <h2 class={`text-2xl font-semibold my-4`}>Contact</h2>
             <div class={`flex flex-col w-full`}>
-                <label for="name">Name</label>
                 <input 
                     name={'name'}
-                    class={`w-full md:w-1/3 rounded p-2 focus:outline-[var(--text-color)]`}
+                    class={`w-full md:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="text" 
-                    placeholder="John Doe" 
+                    // placeholder="John Doe" 
+                    value={formFields.name}
                     required
                     onInput={handleChange}
                 />
+                <label 
+                    for="name"
+                    class={`relative pointer-events-none transition-[0.2s_ease_all] left-2 bottom-8 peer-focus:bottom-[3.625rem] peer-focus:text-xs peer-valid:bottom-[3.625rem] peer-valid:text-xs`}
+                >Name</label>
             </div>
             <div class={`flex flex-col w-full`}>
-                <label for="email">Email</label>
                 <input 
                     name={'email'}
-                    class={`w-full md:w-1/3 rounded p-2 focus:outline-[var(--text-color)]`}
+                    class={`w-full md:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="email" 
-                    placeholder="mail@mail.com" 
                     required
                     onInput={handleChange}
+                    value={formFields.email}
                 />
+                <label 
+                    for="email"
+                    class={`relative pointer-events-none transition-[0.2s_ease_all] left-2 bottom-8 peer-focus:bottom-[3.625rem] peer-focus:text-xs peer-valid:bottom-[3.625rem] peer-valid:text-xs`}
+                >Email</label>
             </div>
             <div class={`flex flex-col w-full`}>
-                <label for="message">Message</label>
                 <textarea 
-                    class={`w-full md:w-1/2 h-32 p-2 rounded focus:outline-[var(--text-color)]`}
-                    placeholder="Message" 
+                    class={`w-full md:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer h-32 resize-none`}
                     required
                     name={'message'}
                     onInput={handleChange}
+                    // placeholder={`${formFields.message.length}/300`}
                     maxlength={300}
+                    value={formFields.message}
                 />
+                <label 
+                    class={`relative pointer-events-none transition-[0.2s_ease_all] left-2 bottom-8 peer-focus:bottom-36 peer-focus:text-xs peer-valid:bottom-36 peer-valid:text-xs`}
+                    for="message"
+                >Message</label>
+                <span
+                    class={`text-xs ${formFields.message.length > 300 ? 'text-red-500': ''}`}
+                >
+                    {`${formFields.message.length}/300`}
+                </span>
             </div>
             <button 
                 type="submit"

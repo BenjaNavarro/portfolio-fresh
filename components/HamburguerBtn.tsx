@@ -16,8 +16,8 @@ export default function HamburguerBtn({
         aria-controls="navbar-hamburger" 
         aria-expanded="false"
     >
-        <span class="sr-only">Open main menu</span>
-        <MenuIcon class="w-6 h-6" />
+      <span class="sr-only">Open main menu</span>
+      <MenuIcon class="w-6 h-6" />
     </button>
   );
 }
