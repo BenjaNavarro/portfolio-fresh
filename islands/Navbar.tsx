@@ -50,8 +50,6 @@ export default function Navbar({
         </ul>
         <HamburguerBtn 
           toggleMenu={() => {
-            console.log('🍋‍🟩', dialogRef?.current?.close, dialogRef?.current?.show, dialogRef?.current?.open);
-            
             if(dialogRef?.current?.open) dialogRef.current?.close();
             else dialogRef?.current?.show();
           }}/>
