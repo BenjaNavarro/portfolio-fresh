@@ -17,8 +17,8 @@ export default {
         },
         move: {
           '25%': {transform: 'translateY(-2.5ch)'},
-          '50%': {transform: 'translateY(-4.5ch)'},
-          '75%': {transform: 'translateY(-7ch)'},
+          '50%': {transform: 'translateY(-5ch)'},
+          '75%': {transform: 'translateY(-7.6ch)'},
         },
         "move-sm": {
           '25%': {transform: 'translateY(-2.2ch)'},
@@ -29,8 +29,8 @@ export default {
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         move: 'move 7s infinite',
-        'white-out': 'white-out 5s infinite',
         'move-sm': 'move-sm 7s infinite',
+        'white-out': 'white-out 5s infinite',
       },
       screens: {
         'xs': '480px',
