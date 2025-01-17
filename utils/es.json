@@ -1,4 +1,7 @@
 {
+    "start": {
+        "greet": "Soy desarrollador Full-stack."
+    },
     "navbar": {
         "NavOptions": [
             { "label": "Inicio", "name": "start" },
@@ -8,11 +11,12 @@
         ]
     },
     "about": {
+        "title": "Sobre mí",
         "greet": "Hola!",
         "paragraph": "Soy un Desarrollador Fullstack con sólida formación en Ingeniería en Ejecución Informática y experiencia en el desarrollo y mantenimiento de aplicaciones web. He trabajado con tecnologías como Node.js, MongoDB, Express, MySQL, React.js y TailwindCSS, gestionando proyectos desde la planif icación hasta la implementación. Mi enfoque está en optimizar el rendimiento y la escalabilidad de los sistemas, aplicando metodologías ágiles para asegurar entregas de alta calidad. Cuento con habilidades en resolución de problemas complejos y trabajo en equipo, además de una comunicación efectiva en inglés a nivel conversacional."
     },
     "experience": {
-
+        "title": "Experience"
     },
     "contact": {
         "title": "Contacto",

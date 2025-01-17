@@ -2,14 +2,20 @@
 export type CustomRef = { base: HTMLElement | null };
 
 export type Dictionary = {
+    start: {
+        greet: string,
+    },
     navbar: {
         NavOptions: { label: string, name: string }[],
     };
     about: {
+        title: string,
         greet: string;
         paragraph: string;
     };
-    experience: {};
+    experience: {
+        title: string,
+    };
     contact: {
         title: string,
         form: {

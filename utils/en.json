@@ -1,4 +1,7 @@
 {
+    "start": {
+        "greet": "I'm Full-stack developer."
+    },
     "navbar": {
         "NavOptions": [
             { "label": "Home", "name": "start" },
@@ -8,11 +11,12 @@
         ]
     },
     "about": {
+        "title": "About me",
         "greet": "Hi!",
         "paragraph": "I am a Fullstack Developer with a solid background in Computer Engineering and experience in developing and maintaining web applications. I have worked with technologies such as Node.js, MongoDB, Express, MySQL, React.js, and TailwindCSS, managing projects from planning to implementation. My focus is on optimizing system performance and scalability, applying agile methodologies to ensure high-quality deliveries. I possess skills in solving complex problems and teamwork, along with effective communication in conversational English"
     },
     "experience": {
-
+        "title": "Experience"
     },
     "contact": {
         "title": "Contact",

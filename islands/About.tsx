@@ -11,15 +11,18 @@ export default function About({ ref }: ComponentProps) {
     <section 
       ref={ref}
       id={`about`}
-      class={`flex w-full justify-start items-center px-12 md:px-72 mt-64`}
+      class={`flex items-start px-8 md:px-32 my-8 mt-16 md:mt-32 flex-col w-full gap-4`}
     >
-      <p class={`w-full text-left font-semibold`}>{`{`}<br />
-        <span class={`font-bold mr-2 text-lg md:ml-10`}>{` ${dictionary.about.greet} 🙂`}</span>: <br />
-        <span class={`md:ml-10 flex text-justify tracking-normal md:tracking-wide leading-4 md:leading-7 `}>
-          {dictionary.about.paragraph}
-        </span>
-        <span class={``}>{`}`}</span>
-      </p>
+      <h2 class={`text-2xl font-semibold my-4`}>{dictionary.about.title}</h2>
+      <div class={`flex w-full justify-start items-center md:pr-96`}>
+        <p class={`w-full text-left font-semibold`}>{`{`}<br />
+          <span class={`font-bold mr-2 text-lg md:ml-10`}>{` ${dictionary.about.greet} 🙂`}</span>: <br />
+          <span class={`ml-4 md:ml-10 flex text-left md:text-justify md:tracking-wide md:leading-7 `}>
+            {dictionary.about.paragraph}
+          </span>
+          <span class={``}>{`}`}</span>
+        </p>
+      </div>
     </section>
   );
 }

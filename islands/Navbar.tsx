@@ -38,9 +38,12 @@ export default function Navbar({
         <span class={`ml-2 animate-wiggle text-xl`}>💻</span>
       </h1>
       <nav class="flex w-fit justify-end">
-        <ul class="hidden md:flex w-full gap-4 justify-end">
+        <ul class="hidden md:flex w-full gap-6 justify-end">
           {dictionary.navbar.NavOptions.map((option) => (
-            <li key={option.label}>
+            <li 
+              key={option.label}
+              class={`hover:scale-105 hover:font-semibold hover:border-b hover:shadow`}
+            >
               <button 
                 name={option.name} 
                 onClick={handleScroll}
@@ -51,8 +54,6 @@ export default function Navbar({
         <HamburguerBtn 
           toggleMenu={() => {
             if(dialogRef?.current?.open){
-              console.log("close: ", dialogRef?.current?.close);
-              
               dialogRef.current?.close();
             } else dialogRef?.current?.show();
           }}/>
