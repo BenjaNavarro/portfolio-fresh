@@ -48,6 +48,13 @@ export default {
         blink: {
           '50%': { 'color': 'transparent' }
         },
+        'tilt-n-move-shaking': {
+          '0%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%': { transform: 'translate(5px, 5px) rotate(5deg)' },
+          '50%': { transform: 'translate(0, 0) rotate(0eg)' },
+          '75%': { transform: 'translate(-5px, 5px) rotate(-5deg)' },
+          '100%': { transform: 'translate(0, 0) rotate(0deg)' },
+        }
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -59,6 +66,7 @@ export default {
         coding: 'typing 3s steps(32) forwards',
         blink: 'blink 1s infinite',
         typing: 'b .7s infinte steps(1), t calc(var--n)*.3s steps(var(--n)) forwards',
+        'gentle-tilt-move-shake': 'tilt-n-move-shaking 0.4s infinite'
       },
       screens: {
         'xs': '480px',

@@ -13,7 +13,7 @@ export default function Start({ ref }: ComponentProps) {
   
   return (
     <section 
-      class={`min-h-[calc(100vh-12vh)] md:min-h-[calc(100vh-10vh)] flex justify-center items-center w-full p-[12%]`}
+      class={`min-h-[calc(100vh-10vh)] md:min-h-[calc(100vh-10vh)] flex justify-center items-center w-full p-[12%]`}
       ref={ref}
     >
       <div class={``}>

@@ -7,6 +7,8 @@ export type Dictionary = {
     },
     navbar: {
         NavOptions: { label: string, name: string }[],
+        lang: string,
+        theme: string,
     };
     about: {
         title: string,
@@ -15,6 +17,38 @@ export type Dictionary = {
     };
     experience: {
         title: string,
+        exp: {
+            title: string,
+            subtitle: string,
+            description: string,
+            "learn-more": string,
+        }[],
+        achievements: string[]
+    },
+    skills: {
+        backend: string[],
+        frontend: string[],
+        "version-control": string[],
+        cloud: string[],
+        "programming-languages": string[],
+        design: string[],
+        "project-management": string[],
+        "soft-skills": string[],
+        "speaking-languages": string[],
+        methodologies: string[]
+    },
+    formation: {
+        title: string,
+        bachelor: {
+            title: string,
+            description: string,
+        },
+        lang: {
+            title: string,
+            subtitle: string,
+            description: string,
+            link: string,
+        },
     };
     contact: {
         title: string,

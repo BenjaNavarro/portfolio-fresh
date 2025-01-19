@@ -1,18 +1,40 @@
 import { MutableRef, useContext } from "preact/hooks";
 import { LanguageContext } from "../context/languageContext.tsx";
+import ExperienceItem from "../components/ExperienceItem.tsx";
 
 declare interface ComponentProps {
   ref: MutableRef<HTMLElement | null>;
 }
 
 export default function Experience({ ref }: ComponentProps) {
-  const { dictionary } = useContext(LanguageContext);
+  const { dictionary, language } = useContext(LanguageContext);
   return (
     <section 
       ref={ref}
-      class={`h-screen flex w-full justify-center items-center`}
+      class={`flex flex-col w-full justify-center items-center px-8 md:px-32 mt-16 md:mt-32 gap-4`}
     >
-      <h2 class={`text-2xl font-semibold my-4`}>{dictionary.experience.title}</h2>
+      <h2 class={`text-2xl font-semibold text-left w-full`}>{dictionary.experience.title}:</h2>
+      <ul class={`w-full`}>
+        {dictionary.experience.exp.map((item, index) => (
+          <ExperienceItem key={index} {...{item}} {...{language}}/>
+        ))}
+      </ul>
+      <div class={`flex w-full justify-start items-center`}>
+        <h3 class={`text-left text-xl w-auto after:content-[':'] after:border-none border-b border-[inherit]`}>
+          {language === "en" && "Achievements"}
+          {language === "es" && "Logros"}
+        </h3>
+      </div>
+      <ul class={`flex flex-col gap-4 justify-start w-full`}>
+        {dictionary.experience.achievements.map((ach, index) => (
+          <li 
+            class={`before:content-['$:'] before:m-2 w-full`}
+            key={index}
+          >
+            {ach}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

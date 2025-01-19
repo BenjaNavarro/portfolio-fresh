@@ -15,52 +15,12 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  font-family: 'Courier New', Courier, monospace;
 }
 
 *::selection {
   background-color: var(--text-color);
   color: var(--background-color);
-}
-
-@media screen and (min-width: 480px) {
-  .closure::after {
-    content: '';
-    position: absolute;
-    height: 6rem;
-    width: 12rem;
-    background: inherit;
-    transform: translate(-13rem, -5.5rem);
-  }
-  
-  .closure::before {
-    content: '';
-    position: absolute;
-    height: 6rem;
-    width: 12rem;
-    background: inherit;
-    transform: translate(-10rem, 2rem);
-  }
-}
-
-
-@media screen and (max-width: 480px) {
-  .closure::after {
-    content: '';
-    position: absolute;
-    height: 6rem;
-    width: 6rem;
-    background: inherit;
-    transform: translate(-8rem, -5.8rem);
-  }
-
-  .closure::before {
-    content: '';
-    position: absolute;
-    height: 6rem;
-    width: 6rem;
-    background: inherit;
-    transform: translate(-5.75rem, 1.2rem);
-  } 
 }
 
 .type {
@@ -103,7 +63,7 @@ body {
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-[var(--text-color)] rounded-full border-2 border-gray-500;
+    @apply bg-[var(--text-color)] rounded-full border-2 border-neutral-500;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {

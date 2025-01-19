@@ -6,12 +6,12 @@ import { LanguageContext } from "../context/languageContext.tsx";
 export default function Footer() {
   const { dictionary } = useContext(LanguageContext);
   return (
-    <footer class="flex flex-col items-center w-full p-4 gap-2 bg-neutral-300 border-t border-neutral-400 dark:bg-neutral-700 dark:border-neutral-600">
+    <footer class="flex flex-col items-center w-full p-4 gap-2 bg-neutral-300 border-t border-neutral-400 dark:bg-neutral-700 dark:border-neutral-600 dark:border-t-[var(--text-color)]">
       <a
         href="https://fresh.deno.dev"
         aria-label={`Fresh's website`} 
         title={`Fresh's website`}
-        class={`flex items-center justify-center gap-2 hover:animate-bounce transition-all duration-300 ease-in-out`}>
+        class={`flex items-center justify-center gap-2 hover:animate-gentle-tilt-move-shake transition-all duration-300 ease-in-out`}>
         <img
           class=""
           src="/logo.svg"
@@ -39,8 +39,12 @@ export default function Footer() {
           <Linkedin class={`w-8 h-8 cursor-pointer hover:animate-bounce`}/>
         </a>
       </div>
-      <span class={`text-center flex gap-1`}>
-        <span class={`font-semibold`}>Benjamín Navarro</span><h4 class={`font-normal`}>{dictionary.footer.rights}</h4> © {new Date().getFullYear()}
+      <span class={`text-center flex flex-col gap-1`}>
+        <span class={`font-semibold`}>Benjamín Navarro</span>
+        <h4 class={`font-normal`}>
+          {dictionary.footer.rights}
+          <span class={`font-semibold`}> © {new Date().getFullYear()}</span>
+        </h4>
       </span>
     </footer>
   );

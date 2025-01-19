@@ -7,8 +7,13 @@
             { "label": "Inicio", "name": "start" },
             { "label": "Sobre mí", "name": "about" },
             { "label": "Experiencia", "name": "experience" },
+            { "label": "Formación", "name": "formation" },
+            { "label": "Habilidades", "name": "skills" },
+            { "label": "Proyectos", "name": "projects" },
             { "label": "Contacto", "name": "contact" }
-        ]
+        ],
+        "lang": "Cambiar idioma",
+        "theme": "Cambiar modo oscuro"
     },
     "about": {
         "title": "Sobre mí",
@@ -16,7 +21,50 @@
         "paragraph": "Soy un Desarrollador Fullstack con sólida formación en Ingeniería en Ejecución Informática y experiencia en el desarrollo y mantenimiento de aplicaciones web. He trabajado con tecnologías como Node.js, MongoDB, Express, MySQL, React.js y TailwindCSS, gestionando proyectos desde la planif icación hasta la implementación. Mi enfoque está en optimizar el rendimiento y la escalabilidad de los sistemas, aplicando metodologías ágiles para asegurar entregas de alta calidad. Cuento con habilidades en resolución de problemas complejos y trabajo en equipo, además de una comunicación efectiva en inglés a nivel conversacional."
     },
     "experience": {
-        "title": "Experience"
+        "title": "Experiencia",
+        "exp": [
+            {
+                "title": "Desarrollador Fullstack",
+                "subtitle": "Subcargo | abril 2023 - agosto 2024",
+                "description": "En este rol, fui responsable del desarrollo y mantenimiento de servicios utilizando Node.js, MongoDB, Express y Mongoose para el backend, mientras que en el frontend implementé soluciones con React.js y TailwindCSS. Participé activamente en el ciclo completo de desarrollo, desde la planificación hasta la implementación, asegurando una alta calidad en el código y mejorando la escalabilidad de los sistemas. Además, optimicé procesos y solucioné problemas técnicos complejos para garantizar la estabilidad y el rendimiento de los productos.",
+                "learn-more": "https://subcargo.com/home"
+            },
+            {
+                "title": "Desarrollador Fullstack",
+                "subtitle": "Globalhap | octubre 2021 - marzo 2023",
+                "description": "Me desempeñé en el desarrollo y mantenimiento de servicios utilizando tecnologías como Node.js, MongoDB, Ruby on Rails y MySQL en el backend, y React.js con TailwindCSS en el frontend. Implementé soluciones robustas y escalables, optimizando el rendimiento de los sistemas existentes y mejorando la experiencia del usuario final. Trabajé en colaboración con equipos multidisciplinarios aplicando metodologías ágiles, priorizando la calidad y la eficiencia en la entrega de funcionalidades.",
+                "learn-more": "https://www.instagram.com/globalhap/?hl=es"
+            }
+        ],
+        "achievements": [
+            "Mejoré la estabilidad y el rendimiento de los servicios mediante la optimización de soluciones backend.",
+            "Me desempeñé en el desarrollo y mantenimiento de servicios utilizando tecnologías como Node.js, MongoDB, Ruby on Rails y MySQL en el backend, y React.js con TailwindCSS en el frontend. Implementé soluciones robustas y escalables, optimizando el rendimiento de los sistemas existentes y mejorando la experiencia del usuario final. Trabajé en colaboración con equipos multidisciplinarios aplicando metodologías ágiles, priorizando la calidad y la eficiencia en la entrega de funcionalidades." 
+        ]
+    },
+    "formation": {
+        "title": "Formación",
+        "bachelor": {
+            "title": "Ingeniería En Ejecución Informática",
+            "description": "Universidad Católica de Valparaíso | 2016 - 2023"
+        },
+        "lang": {
+            "title": "Certificación de idioma inglés",
+            "subtitle": "EF SET | Agosto 2024",
+            "description": "Completé con éxito el certificado EF SET, alcanzando un nivel de 63/100, lo que valida mis habilidades en el idioma inglés.",
+            "link": "https://cert.efset.org/PNzTWL"
+        }
+    },
+    "skills": {
+        "backend": ["Node", "MongoDB", "Express", "MySQL", "Ruby on Rails"],
+        "frontend": ["React", "Angular", "TailwindCSS", "Redux", "Formik"],
+        "version-control": ["Git", "Bitbucket", "Github"],
+        "cloud": ["GCP", "AWS", "Supabase", "Firebase", "Atlassian"],
+        "programming-languages": ["JavaScript", "TypeScript", "Python", "Java", "C"],
+        "design": ["Figma", "AdobeXD", "Canva"],
+        "project-management": ["clickUp", "Jira"],
+        "soft-skills": ["Resolución de problemas", "Optimización de procesos"],
+        "speaking-languages": ["Inglés"],
+        "methodologies": ["SCRUM", "Design thinking", "Agile"]
     },
     "contact": {
         "title": "Contacto",

@@ -42,7 +42,7 @@ export default function Navbar({
           {dictionary.navbar.NavOptions.map((option) => (
             <li 
               key={option.label}
-              class={`hover:scale-105 hover:font-semibold hover:border-b hover:shadow`}
+              class={`hover:scale-105 hover:font-semibold dark:hover:border-b dark:border-[var(--text-color)] transition-all ease-in duration-300 hover:before:content-["..."] before:transition-all`}
             >
               <button 
                 name={option.name} 
@@ -59,12 +59,12 @@ export default function Navbar({
           }}/>
       </nav>
       <dialog
-        class={`p-2 rounded-lg bg-[var(--background-color)] z-[60] absolute top-16 -right-44 shadow-lg border border-neutral-400`}
+        class={`p-2 rounded-lg bg-[var(--background-color)] z-[60] absolute top-20 w-[99%] shadow-lg border border-neutral-400`}
         ref={dialogRef}
         aria-labelledby="navbar-hamburger"
       >
         <nav 
-          class={`bg-inherit flex flex-col justify-center items-center`}
+          class={`bg-inherit flex flex-col justify-center items-center w-full`}
           id="navbar-hamburger"
         >
           <ul class="flex flex-col font-medium mt-4 gap-2">
@@ -108,13 +108,15 @@ export default function Navbar({
         <button 
           class={`flex items-center p-1 gap-1 font-semibold`}
           onClick={toggleLanguage}
+          title={dictionary.navbar.lang}
         >
           <Language class={`cursor-[inherit] w-4 h-4`}/>
           {language.toUpperCase()}
         </button>
         <button
           class="w-8 p-1 m-1 flex items-center justify-center"
-          aria-label="Toggle Dark Mode"
+          aria-label={dictionary.navbar.theme}
+          title={dictionary.navbar.theme}
           onClick={toggleTheme}
         >
           {currentTheme &&

@@ -1,14 +1,19 @@
 {
     "start": {
-        "greet": "I'm Full-stack developer."
+        "greet": "I'm a Full-stack developer."
     },
     "navbar": {
         "NavOptions": [
             { "label": "Home", "name": "start" },
             { "label": "About me", "name": "about" },
             { "label": "Experience", "name": "experience" },
+            { "label": "Formation", "name": "formation" },
+            { "label": "Skills", "name": "skills" },
+            { "label": "Projects", "name": "projects" },
             { "label": "Contact", "name": "contact" }
-        ]
+        ],
+        "lang": "Change language",
+        "theme": "Toggle dark mode"
     },
     "about": {
         "title": "About me",
@@ -16,7 +21,50 @@
         "paragraph": "I am a Fullstack Developer with a solid background in Computer Engineering and experience in developing and maintaining web applications. I have worked with technologies such as Node.js, MongoDB, Express, MySQL, React.js, and TailwindCSS, managing projects from planning to implementation. My focus is on optimizing system performance and scalability, applying agile methodologies to ensure high-quality deliveries. I possess skills in solving complex problems and teamwork, along with effective communication in conversational English"
     },
     "experience": {
-        "title": "Experience"
+        "title": "Experience",
+        "exp": [
+            {
+                "title": "Fullstack developer",
+                "subtitle": "Subcargo | april 2023 - august 2024",
+                "description": "In this role, I was responsible for the development and maintenance of services using Node.js, MongoDB, Express, and Mongoose for the backend, while implementing solutions on the frontend with React.js and TailwindCSS. I actively participated in the full development lifecycle, from planning to implementation, ensuring high-quality code and improving system scalability. Additionally, I optimized processes and resolved complex technical issues to ensure the stability and performance of the products.",
+                "learn-more": "https://subcargo.com/home"
+            },
+            {
+                "title": "Fullstack developer",
+                "subtitle": "Globalhap | october 2021 - march 2023",
+                "description": "I worked on the development and maintenance of services using technologies such as Node.js, MongoDB, Ruby on Rails, and MySQL for the backend, and React.js with TailwindCSS for the frontend. I implemented robust and scalable solutions, optimizing the performance of existing systems and enhancing the end-user experience. I collaborated with multidisciplinary teams, applying agile methodologies and prioritizing quality and efficiency in delivering features.",
+                "learn-more": "https://www.instagram.com/globalhap/?hl=es"
+            }
+        ],
+        "achievements": [
+            "I improved the stability and performance of services by optimizing backend solutions.",
+            "I contributed to the design and development of intuitive and accessible user interfaces, enhancing the end-user experience." 
+        ]
+    },
+    "formation": {
+        "title": "Formation",
+        "bachelor": {
+            "title": "Computer science engineering",
+            "description": "Universidad Católica de Valparaíso | 2016 - 2023"
+        },
+        "lang": {
+            "title": "English Certification",
+            "subtitle": "EF SET | August 2024",
+            "description": "I successfully completed the EF SET certificate, achieving a score of 63/100, which validates my English language skills.",
+            "link": "https://cert.efset.org/PNzTWL"
+        }
+    },
+    "skills": {
+        "backend": ["Node", "MongoDB", "Express", "MySQL", "Ruby on Rails"],
+        "frontend": ["React", "Angular", "TailwindCSS", "Redux", "Formik"],
+        "version-control": ["Git", "Bitbucket", "Github"],
+        "cloud": ["GCP", "AWS", "Supabase", "Firebase", "Atlassian"],
+        "programming-languages": ["JavaScript", "TypeScript", "Python", "Java", "C"],
+        "design": ["Figma", "AdobeXD", "Canva"],
+        "project-management": ["clickUp", "Jira"],
+        "soft-skills": ["Problem solving", "Process optimization"],
+        "speaking-languages": ["English"],
+        "methodologies": ["SCRUM", "Design thinking", "Agile"]
     },
     "contact": {
         "title": "Contact",

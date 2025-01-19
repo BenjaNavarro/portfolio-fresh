@@ -2,17 +2,18 @@ export default function(){
     return {
         "type": "object",
         "properties": {
-            "email": {
+            "name": {
                 "type": "string",
-                "format": "email"
+                "required": true,
+            },
+            "email": {
+                "type": "email",
+                "required": true,
             },
             "message": {
-                "type": "string"
+                "type": "string",
+                "required": true,
             }
-        },
-        "required": [
-            "email",
-            "message"
-        ]
+        }
     }
 }
