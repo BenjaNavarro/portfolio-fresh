@@ -1,11 +1,11 @@
 import { ComponentChildren, createContext } from "preact";
 import { StateUpdater, useState, Dispatch } from "preact/hooks";
 import { dictionaries } from "../utils/dictionaries.ts";
-import { Dictionary } from "../types.d.ts";
+import { Dictionary, LangType } from "../types.d.ts";
 
 declare interface IContext{
-    language: 'en' | 'es',
-    setLanguage: Dispatch<StateUpdater<'en' | 'es'>>,
+    language: LangType,
+    setLanguage: Dispatch<StateUpdater<LangType>>,
     dictionary: Dictionary,
 };
 
@@ -16,7 +16,7 @@ export const LanguageContext = createContext<IContext>({
 });
 
 export const LanguageProvider = ({ children }: { children: ComponentChildren }) => {
-    const [language, setLanguage] = useState<'en' | 'es'>("en");
+    const [language, setLanguage] = useState<LangType>("en");
 
     const value = {
         language,

@@ -10,6 +10,7 @@ import Contact from "./Contact.tsx";
 import { LanguageProvider } from "../context/languageContext.tsx";
 import Projects from "../components/Projects.tsx";
 import Formation from "../components/Formation.tsx";
+import Skills from "../components/Skills.tsx";
 
 export default function MainLand() {
   const startRef = useRef<CustomRef | null>(null);
@@ -18,6 +19,7 @@ export default function MainLand() {
   const contactRef = useRef<CustomRef | null>(null);
   const projectsRef = useRef<CustomRef | null>(null);
   const formationRef = useRef<CustomRef | null>(null);
+  const skillsRef = useRef<CustomRef | null>(null);
 
   const scrollOptions: ScrollIntoViewOptions = { behavior: "smooth", block: "center", inline: "nearest" } as const;
 
@@ -30,6 +32,7 @@ export default function MainLand() {
     if(target?.name === 'projects') projectsRef?.current?.base?.scrollIntoView(scrollOptions);
     if(target?.name === 'experience' && experienceRef.current) experienceRef?.current?.base?.scrollIntoView(scrollOptions);
     if(target?.name === 'formation' && formationRef.current) formationRef?.current?.base?.scrollIntoView(scrollOptions);
+    if(target?.name === 'skills' && skillsRef.current) skillsRef?.current?.base?.scrollIntoView(scrollOptions);
   };
 
   useEffect(() => {
@@ -45,6 +48,7 @@ export default function MainLand() {
         <About ref={aboutRef as MutableRef<HTMLElement | null>}/>
         <Experience ref={experienceRef as MutableRef<HTMLElement | null>}/>
         <Formation ref={formationRef as MutableRef<HTMLElement | null>}/>
+        <Skills ref={skillsRef as MutableRef<HTMLElement | null>}/>
         <Projects ref={projectsRef as MutableRef<HTMLElement | null>}/>
         <Contact ref={contactRef as MutableRef<HTMLFormElement | null>}/>
         <Footer />

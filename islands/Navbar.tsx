@@ -45,6 +45,7 @@ export default function Navbar({
               class={`hover:scale-105 hover:font-semibold dark:hover:border-b dark:border-[var(--text-color)] transition-all ease-in duration-300 hover:before:content-["..."] before:transition-all`}
             >
               <button 
+                title={option.label}
                 name={option.name} 
                 onClick={handleScroll}
               >{option.label}</button>

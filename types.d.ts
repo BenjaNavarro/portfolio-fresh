@@ -26,6 +26,7 @@ export type Dictionary = {
         achievements: string[]
     },
     skills: {
+        title: string,
         backend: string[],
         frontend: string[],
         "version-control": string[],
@@ -50,6 +51,9 @@ export type Dictionary = {
             link: string,
         },
     };
+    projects: {
+        title: string;
+    };
     contact: {
         title: string,
         form: {
@@ -64,3 +68,5 @@ export type Dictionary = {
         rights: string,
     };
 };
+
+export type LangType = "en" | "es";

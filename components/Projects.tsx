@@ -12,11 +12,10 @@ export default function Projects({
     const { dictionary } = useContext(LanguageContext);
     return (
         <Layout
-            title={"Projects"}
-            children={
-                <></>
-            }
+            title={dictionary.projects.title}
             ref={ref}
-        />
+        >
+            <></>
+        </Layout>
     );
 }

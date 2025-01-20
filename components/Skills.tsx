@@ -13,9 +13,9 @@ export default function Skills({
     return (
         <Layout
             {...{ref}}
-            title={"Skills"}
+            title={dictionary.skills.title}
         >
             <></>
         </Layout>
-    )
+    );
 }

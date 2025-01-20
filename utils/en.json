@@ -1,6 +1,6 @@
 {
     "start": {
-        "greet": "I'm a Full-stack developer."
+        "greet": "Full-stack developer."
     },
     "navbar": {
         "NavOptions": [
@@ -55,6 +55,7 @@
         }
     },
     "skills": {
+        "title": "Skills",
         "backend": ["Node", "MongoDB", "Express", "MySQL", "Ruby on Rails"],
         "frontend": ["React", "Angular", "TailwindCSS", "Redux", "Formik"],
         "version-control": ["Git", "Bitbucket", "Github"],
@@ -65,6 +66,9 @@
         "soft-skills": ["Problem solving", "Process optimization"],
         "speaking-languages": ["English"],
         "methodologies": ["SCRUM", "Design thinking", "Agile"]
+    },
+    "projects": {
+        "title": "Projects"
     },
     "contact": {
         "title": "Contact",
