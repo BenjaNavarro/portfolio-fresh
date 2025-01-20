@@ -1,5 +1,5 @@
 import { MutableRef, useContext, useState } from "preact/hooks";
-import emailjs from 'https://esm.sh/@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 import { LanguageContext } from "../context/languageContext.tsx";
 declare interface ComponentProps {
@@ -9,10 +9,12 @@ declare interface ComponentProps {
 export default function Contact({ ref }: ComponentProps) {
     const { dictionary } = useContext(LanguageContext);
     const [formFields, setFormFields] = useState({
-        name: '',
-        email: '',
+        user_name: '',
+        user_email: '',
         message: '',
     });
+
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
     const handleChange = (e: InputEvent) => {
         const { name, value } = e.target as HTMLInputElement;
@@ -22,43 +24,43 @@ export default function Contact({ ref }: ComponentProps) {
         }));
     }
 
-    const handleSubmit = (e: SubmitEvent) => {
+    const handleSubmit = async(e: SubmitEvent) => {
+        setIsSubmitting(true);
         e.preventDefault();
-        console.log('submit: 🍋‍🟩', formFields);
-        console.log('emailjs: ✉️', emailjs);
+        const formParent = e.submitter?.parentElement as HTMLFormElement;
 
-        // emailjs
-        //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', ref?.current as HTMLFormElement, {
-        //         publicKey: 'YOUR_PUBLIC_KEY',
-        //     })
-        //     .then(
-        //         () => {
-        //             console.log('SUCCESS!');
-        //         },
-        //         (error) => {
-        //             console.log('FAILED...', error.text);
-        //         },
-        //     );
+        await emailjs
+            .sendForm('service_rcenz4i', 'template_tumip9o', formParent , {
+                publicKey: 'tUo1mvYob1Xb4AeRG',
+            })
+            .then(
+                (res: unknown) => {                    
+                    console.log('SUCCESS?', res);
+                },
+                (error) => {
+                    console.log('FAILED...', error);
+                },
+            ).finally(() => setIsSubmitting(false));
     };
 
     return (
         <form 
             class={`flex items-start px-8 md:px-32 my-8 flex-col w-full gap-4`} 
             onSubmit={handleSubmit} 
-            ref={ref}
+            {...{ref}}
         >
             <h2 class={`text-2xl font-semibold my-4`}>{dictionary.contact.title}</h2>
             <div class={`flex flex-col w-full`}>
                 <input 
-                    name={'name'}
+                    name={'user_name'}
                     class={`w-full md:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="text"
-                    value={formFields.name}
+                    value={formFields.user_name}
                     required
                     onInput={handleChange}
                 />
                 <label 
-                    for="name"
+                    for="user_name"
                     class={`relative pointer-events-none transition-[0.2s_ease_all] left-2 bottom-8 peer-focus:bottom-[3.625rem] peer-focus:text-xs peer-valid:bottom-[3.625rem] peer-valid:text-xs`}
                 >
                     {dictionary.contact.form.name}
@@ -66,15 +68,15 @@ export default function Contact({ ref }: ComponentProps) {
             </div>
             <div class={`flex flex-col w-full`}>
                 <input 
-                    name={'email'}
+                    name={'user_email'}
                     class={`w-full md:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="email" 
                     required
                     onInput={handleChange}
-                    value={formFields.email}
+                    value={formFields.user_email}
                 />
                 <label 
-                    for="email"
+                    for="user_email"
                     class={`relative pointer-events-none transition-[0.2s_ease_all] left-2 bottom-8 peer-focus:bottom-[3.625rem] peer-focus:text-xs peer-valid:bottom-[3.625rem] peer-valid:text-xs`}
                 >
                     {dictionary.contact.form.email}
@@ -103,6 +105,7 @@ export default function Contact({ ref }: ComponentProps) {
             </div>
             <button 
                 type="submit"
+                disabled={isSubmitting}
                 class={`w-full md:w-1/4 p-2 rounded bg-[var(--text-color)] text-[var(--background-color)] hover:bg-neutral-800 dark:hover:bg-neutral-500`}
             >
                 {dictionary.contact.form.button}

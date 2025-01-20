@@ -8,6 +8,18 @@ declare interface ComponentProps {
 
 export default function About({ ref }: ComponentProps) {
   const { dictionary } = useContext(LanguageContext);
+
+  const parts = dictionary.about.paragraph.split(" ");
+  const keyWords = [
+    { label: "Node.js,", style: "text-slate-500" },
+    { label: "MongoDB,", style: "text-green-500" },
+    { label: "Express,", style: "text-lime-500" },
+    { label: "MySQL,", style: "text-blue-500" },
+    { label: "React.js,", style: "text-cyan-400" }, //english
+    { label: "React.js", style: "text-cyan-400" }, //spanish
+    { label: "TailwindCSS,", style: "text-sky-400" },
+  ];
+
   return (
     <Layout
       title={dictionary.about.title}
@@ -16,9 +28,17 @@ export default function About({ ref }: ComponentProps) {
       <div class={`flex w-full justify-start items-center md:pr-96`}>
         <p class={`w-full text-left font-semibold`}>{`{`}<br />
           <span class={`mr-2 text-lg ml-4 md:ml-10`}>{` ${dictionary.about.greet} 🙂`}</span>: <br />
-          <span class={`ml-4 md:ml-10 flex text-left md:text-justify md:tracking-wide md:leading-7 `}>
-            {dictionary.about.paragraph}
-          </span>
+          {parts.map((word, index) => {
+            const keyword = keyWords.find(kw => kw.label === word);
+            if (keyword) {
+              return (
+                <span key={index} class={keyword.style}>
+                  {word}{" "}
+                </span>
+              );
+            }
+            return word + " ";
+          })}
           <span class={``}>{`}`}</span>
         </p>
       </div>
