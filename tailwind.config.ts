@@ -72,6 +72,18 @@ export default {
         'xs': '480px',
         '3xl': '1600px',
       },
+      backgroundColor: {
+        primary: "bg-[var(--background-color)]",
+        secondary: "bg-[var(--text-color)]"
+      },
+      textColor: {
+        primary: "bg-[var(--text-color)]",
+        secondary: "bg-[var(--background-color)]"
+      },
+      borderColor: {
+        primary: "bg-[var(--text-color)]",
+        secondary: "bg-[var(--background-color)]"
+      }
       // margin: {
       //   'inline': 'margin-inline'
       // }

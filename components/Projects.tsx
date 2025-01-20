@@ -1,4 +1,6 @@
-import { MutableRef } from "preact/hooks";
+import { MutableRef, useContext } from "preact/hooks";
+import Layout from "./Layout.tsx";
+import { LanguageContext } from "../context/languageContext.tsx";
 
 declare interface ComponentProps {
     ref: MutableRef<HTMLElement | null>;
@@ -7,9 +9,14 @@ declare interface ComponentProps {
 export default function Projects({
     ref
 }: ComponentProps) {
-  return (
-    <section {...{ref}} class={`flex h-screen w-full justify-center items-center px-32`}>
-        <h2 class={`text-2xl font-semibold my-4 text-left w-full`}>Projects</h2>
-    </section>
-  );
+    const { dictionary } = useContext(LanguageContext);
+    return (
+        <Layout
+            title={"Projects"}
+            children={
+                <></>
+            }
+            ref={ref}
+        />
+    );
 }
