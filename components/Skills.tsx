@@ -11,7 +11,7 @@ declare interface ComponentProps {
 export default function Skills({
     ref
 }: ComponentProps) {
-    const { dictionary, language } = useContext(LanguageContext);
+    const { dictionary } = useContext(LanguageContext);
     const skillsContents: SkillsContents = dictionary.skills.contents;
     return (
         <Layout

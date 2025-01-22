@@ -1,4 +1,4 @@
-import { ComponentType } from 'preact';
+import { createElement } from "preact";
 
 // Define a custom type for the refs that includes the base property
 export type CustomRef = { base: HTMLElement | null };
@@ -80,7 +80,7 @@ export type ContentType = {
 
 export type SkillItem = {
     text: string;
-    Icon: ComponentType<any>;
+    Icon: (props: createElement.JSX.HTMLAttributes<SVGSVGElement>) => createElement.JSX.Element;
     url: string;
 };
   
