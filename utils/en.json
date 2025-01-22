@@ -103,6 +103,7 @@
     },
     "footer": {
         "$fresh": "Made with Fresh",
+        "download": "Download resume",
         "rights": "All rights reserved"
     }
 }

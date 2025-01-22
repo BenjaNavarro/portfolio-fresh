@@ -58,6 +58,7 @@ export type Dictionary = {
     };
     footer: {
         $fresh: string,
+        download: string,
         rights: string,
     };
 };

@@ -103,6 +103,7 @@
     },
     "footer": {
         "$fresh": "Hecho con Fresh",
+        "download": "Descargar CV",
         "rights": "Todos los derechos reservados"
     }
 }

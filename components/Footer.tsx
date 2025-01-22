@@ -2,6 +2,7 @@ import { useContext } from "preact/hooks";
 import Github from "./Icons/Github.tsx";
 import Linkedin from "./Icons/Linkedin.tsx";
 import { LanguageContext } from "../context/languageContext.tsx";
+import Download from "./Icons/Download.tsx";
 
 export default function Footer() {
   const { dictionary } = useContext(LanguageContext);
@@ -23,6 +24,16 @@ export default function Footer() {
           {dictionary.footer.$fresh}
         </p>
       </a>
+      <div>
+        <a
+          class="cursor-pointer flex flex-col items-center hover:-translate-y-1 transition-transform duration-500"
+          href="resume.pdf"
+          download={`resume.pdf`}
+        >
+          <Download class={`w-8 h-8 cursor-inherit`}/>
+          {dictionary.footer.download}
+        </a>
+      </div>
       <div class={`flex w-full items-center justify-center gap-4`}>
         <a 
           href="https://github.com/BenjaNavarro"
