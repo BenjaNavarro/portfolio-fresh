@@ -1,9 +1,15 @@
+import AdobeXD from "../components/Icons/AdobeXD.tsx";
+import Agile from "../components/Icons/Agile.tsx";
 import Angular from "../components/Icons/Angular.tsx";
 import Atlassian from "../components/Icons/Atlassian.tsx";
 import AWS from "../components/Icons/AWS.tsx";
 import Bitbucket from "../components/Icons/Bitbucket.tsx";
+import Canva from "../components/Icons/Canva.tsx";
 import CLang from "../components/Icons/CLang.tsx";
+import ClickUp from "../components/Icons/ClickUp.tsx";
+import DesignThinking from "../components/Icons/DesignThinking.tsx";
 import Express from "../components/Icons/Express.tsx";
+import Figma from "../components/Icons/Figma.tsx";
 import Firebase from "../components/Icons/Firebase.tsx";
 import Formik from "../components/Icons/Formik.tsx";
 import GCP from "../components/Icons/GCP.tsx";
@@ -11,16 +17,20 @@ import Git from "../components/Icons/Git.tsx";
 import Github from "../components/Icons/Github.tsx";
 import Java from "../components/Icons/Java.tsx";
 import JavaScript from "../components/Icons/JavaScript.tsx";
+import Jira from "../components/Icons/Jira.tsx";
 import MongoDB from "../components/Icons/MongoDB.tsx";
 import Mongoose from "../components/Icons/Mongoose.tsx";
 import MySQL from "../components/Icons/MySQL.tsx";
 import NodeJS from "../components/Icons/NodeJS.tsx";
 import PostgreSQL from "../components/Icons/PostgreSQL.tsx";
+import ProblemSolving from "../components/Icons/ProblemSolving.tsx";
+import ProcessOptimization from "../components/Icons/ProcessOptimization.tsx";
 import Python from "../components/Icons/Python.tsx";
 import ReactJS from "../components/Icons/ReactJS.tsx";
 import Redux from "../components/Icons/Redux.tsx";
 import RubyOnRails from "../components/Icons/RubyOnRails.tsx";
 import RxDB from "../components/Icons/RxDB.tsx";
+import Scrum from "../components/Icons/Scrum.tsx";
 import Supabase from "../components/Icons/Supabase.tsx";
 import TailwindCSS from "../components/Icons/TailwindCSS.tsx";
 import TypeScript from "../components/Icons/TypeScript.tsx";
@@ -120,22 +130,40 @@ export const skillSet: SkillSet = {
     ],
     "design": [
         {
-            text: 'Atlassian', Icon: Atlassian, url: "https://www.atlassian.com"
+            text: 'Figma', Icon: Figma, url: "https://www.figma.com"
+        },
+        {
+            text: 'AdobeXD', Icon: AdobeXD, url: "https://adobexdplatform.com"
+        },
+        {
+            text: 'Canva', Icon: Canva, url: "https://www.canva.com"
         },
     ],
     "project-management": [
         {
-            text: 'Atlassian', Icon: Atlassian, url: "https://www.atlassian.com"
+            text: 'ClickUp', Icon: ClickUp, url: "https://clickup.com"
+        },
+        {
+            text: 'Jira', Icon: Jira, url: "https://www.atlassian.com/es/software/jira"
         },
     ],
     "soft-skills": [
         {
-            text: 'Atlassian', Icon: Atlassian, url: "https://www.atlassian.com"
+            text: 'Problem solving', Icon: ProblemSolving, url: ""
+        },
+        {
+            text: 'Process optimization', Icon: ProcessOptimization, url: ""
         },
     ],
     "methodologies": [
         {
-            text: 'Atlassian', Icon: Atlassian, url: "https://www.atlassian.com"
+            text: 'SCRUM', Icon: Scrum, url: "https://www.scrum.org"
+        },
+        {
+            text: 'Agile', Icon: Agile, url: "https://www.agilealliance.org/agile101/"
+        },
+        {
+            text: 'Design thinking', Icon: DesignThinking, url: "https://designthinking.ideo.com"
         },
     ],
     "speaking-languages": [
@@ -143,8 +171,5 @@ export const skillSet: SkillSet = {
             text: "English", Icon: UkUsa, url: "https://www.cambridgeenglish.org/learning-english/"
         },
     ]
-    // "design": ["Figma", "AdobeXD", "Canva"],
-    // "project-management": ["clickUp", "Jira"],
     // "soft-skills": ["Resolución de problemas", "Optimización de procesos"],
-    // "methodologies": ["SCRUM", "Design thinking", "Agile"]
 };

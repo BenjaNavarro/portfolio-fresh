@@ -12,12 +12,12 @@ export default function About({ ref }: ComponentProps) {
   const parts = dictionary.about.paragraph.split(" ");
   const keyWords = [
     { label: "Node.js,", style: "text-slate-500" },
-    { label: "MongoDB,", style: "text-green-500" },
-    { label: "Express,", style: "text-lime-500" },
+    { label: "MongoDB,", style: "text-green-700" },
+    { label: "Express,", style: "text-lime-700" },
     { label: "MySQL,", style: "text-blue-500" },
-    { label: "React.js,", style: "text-cyan-400" }, //english
-    { label: "React.js", style: "text-cyan-400" }, //spanish
-    { label: "TailwindCSS,", style: "text-sky-400" },
+    { label: "React.js,", style: "text-cyan-600" }, //english
+    { label: "React.js", style: "text-cyan-600" }, //spanish
+    { label: "TailwindCSS,", style: "text-sky-600" },
   ];
 
   return (

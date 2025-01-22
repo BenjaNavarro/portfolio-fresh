@@ -1,5 +1,5 @@
 import { ComponentChildren, createContext } from "preact";
-import { StateUpdater, useState, Dispatch } from "preact/hooks";
+import { StateUpdater, useState, Dispatch, useEffect } from "preact/hooks";
 import { dictionaries } from "../utils/dictionaries.ts";
 import { Dictionary, LangType } from "../types.d.ts";
 
@@ -23,6 +23,14 @@ export const LanguageProvider = ({ children }: { children: ComponentChildren }) 
         setLanguage,
         dictionary: dictionaries[language],
     };
+
+    useEffect(() => {
+        const langs = navigator.languages;
+        console.log({langs});
+        if(langs[0].includes("es") || langs[0].includes("es-419")) {
+          setLanguage("es");
+        } else setLanguage("en");
+      }, []);
 
     return (
         <LanguageContext.Provider value={value}>

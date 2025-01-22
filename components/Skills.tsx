@@ -18,16 +18,16 @@ export default function Skills({
             {...{ref}}
             title={dictionary.skills.title}
         >
-            <div class={`flex flex-wrap gap-4`}>
+            <div class={`flex flex-wrap justify-between gap-4 w-full`}>
                 {Object.keys(skillsContents).map((key) => (
                     <div 
                         key={key}
-                        class={`flex justify-start items-center gap-8 w-[40%]`}
+                        class={`flex flex-col md:flex-row items-center w-full md:w-[40%] border-b-[3px] border-primary`}
                     >
                         <span 
-                            class={`text-nowrap text-left w-1/2`}
+                            class={`text-nowrap text-left w-full md:w-1/2 after:content-[':']`}
                         >{skillsContents[key].title}</span>
-                        <ul class={`flex w-1/2 items-center justify-end gap-2`}>
+                        <ul class={`flex w-full md:w-1/2 items-center justify-start md:justify-end gap-2 p-2`}>
                             {skillSet[key].map((skill, index) => (
                                 <li key={index}>
                                     <a 
@@ -36,7 +36,7 @@ export default function Skills({
                                         rel="noopener noreferrer"
                                         label={skill.text}
                                         title={skill.text}
-                                        class={``}
+                                        class={`flex justify-center items-center`}
                                     >
                                         <skill.Icon class={`w-8 h-8 cursor-inherit`}/>
                                     </a>

@@ -86,6 +86,9 @@ export default {
       },
       cursor: {
         inherit: "cursor-[inherit]"
+      },
+      fill: {
+        'gradient-to-tr': "linear-gradient: linear-gradient(to top right, var(--tw-gradient-stops))"
       }
       // margin: {
       //   'inline': 'margin-inline'

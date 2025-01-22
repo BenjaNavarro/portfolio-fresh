@@ -17,22 +17,9 @@ export default function Bitbucket(props: JSX.HTMLAttributes<SVGSVGElement>) {
                 clipRule="evenodd"
             />
             <path
-                fill="url(#a)"
+                fill="#0052CC"
                 d="M14.122 6.033H10.1l-.67 3.931H6.604L3.317 13.86c.105.09.238.139.376.14h8.766a.43.43 0 0 0 .425-.36z"
             />
-            <defs>
-            <linearGradient
-                id="a"
-                x1={11.544}
-                x2={6.918}
-                y1={4.676}
-                y2={11.282}
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop offset={0.18} stopColor="#0052CC" />
-                <stop offset={1} stopColor="#2684FF" />
-            </linearGradient>
-            </defs>
         </svg>
     )
 }
