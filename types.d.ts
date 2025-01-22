@@ -30,18 +30,6 @@ export type Dictionary = {
     skills: {
         title: string,
         contents: SkillsContents,
-        // contents: {
-        //     "backend": ContentType,
-        //     "frontend": ContentType,
-        //     "version-control": ContentType,
-        //     "cloud": ContentType,
-        //     "programming-languages": ContentType,
-        //     "design": ContentType,
-        //     "project-management": ContentType,
-        //     "soft-skills": ContentType,
-        //     "speaking-languages": ContentType,
-        //     "methodologies": ContentType
-        // },
     },
     formation: {
         title: string,

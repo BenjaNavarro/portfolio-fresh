@@ -40,11 +40,11 @@ export default function Footer() {
         </a>
       </div>
       <span class={`text-center flex flex-col gap-1`}>
-        <span class={`font-semibold`}>Benjamín Navarro</span>
-        <h4 class={`font-normal`}>
+        <h2 class={`font-semibold`}>Benjamín Navarro</h2>
+        <h3 class={`font-normal`}>
           {dictionary.footer.rights}
           <span class={`font-semibold`}> © {new Date().getFullYear()}</span>
-        </h4>
+        </h3>
       </span>
     </footer>
   );
