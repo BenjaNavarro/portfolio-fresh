@@ -24,24 +24,24 @@ export default function About({ ref }: ComponentProps) {
     <Layout
       title={dictionary.about.title}
       ref={ref}
+      class={`gap-0`}
     >
-      <div class={`flex w-full justify-start items-center md:pr-96`}>
-        <p class={`w-full text-left font-semibold`}>{`{`}<br />
-          <span class={`mr-2 text-lg ml-4 md:ml-10`}>{` ${dictionary.about.greet} 🙂`}</span>: <br />
-          {parts.map((word, index) => {
-            const keyword = keyWords.find(kw => kw.label === word);
-            if (keyword) {
-              return (
-                <span key={index} class={keyword.style}>
-                  {word}{" "}
-                </span>
-              );
-            }
-            return word + " ";
-          })}
-          <span class={``}>{`}`}</span>
-        </p>
-      </div>
+      <span class={`w-full text-left text-lg`}>{`{`}</span>
+      <span class={`w-full text-left text-lg ml-4 md:ml-10 after:content-[':']`}>{` ${dictionary.about.greet} 🙂`}</span>
+      <p class={`w-full ml-4 md:ml-10 text-justify`}>
+        {parts.map((word, index) => {
+          const keyword = keyWords.find(kw => kw.label === word);
+          if (keyword) {
+            return (
+              <span key={index} class={keyword.style}>
+                {word}{" "}
+              </span>
+            );
+          }
+          return word + " ";
+        })}
+      </p>
+      <span class={`w-full text-left text-lg`}>{`}`}</span>
     </Layout>
   );
 }

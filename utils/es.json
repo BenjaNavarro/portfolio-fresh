@@ -56,16 +56,38 @@
     },
     "skills": {
         "title": "Habilidades",
-        "backend": ["Node", "MongoDB", "Express", "MySQL", "Ruby on Rails"],
-        "frontend": ["React", "Angular", "TailwindCSS", "Redux", "Formik"],
-        "version-control": ["Git", "Bitbucket", "Github"],
-        "cloud": ["GCP", "AWS", "Supabase", "Firebase", "Atlassian"],
-        "programming-languages": ["JavaScript", "TypeScript", "Python", "Java", "C"],
-        "design": ["Figma", "AdobeXD", "Canva"],
-        "project-management": ["clickUp", "Jira"],
-        "soft-skills": ["Resolución de problemas", "Optimización de procesos"],
-        "speaking-languages": ["Inglés"],
-        "methodologies": ["SCRUM", "Design thinking", "Agile"]
+        "contents": {
+            "backend": {
+                "title": "Backend"
+            },
+            "frontend": {
+                "title": "Frontend"
+            },
+            "version-control": {
+                "title": "Control de versiones"
+            },
+            "cloud": {
+                "title": "Nube"
+            },
+            "programming-languages": {
+                "title": "Lenguajes de programación"
+            },
+            "design": {
+                "title": "Diseño"
+            },
+            "project-management": {
+                "title": "Proyectos"
+            },
+            "soft-skills": {
+                "title": "Habilidades blandas" 
+            },
+            "speaking-languages": {
+                "title": "Lenguas"
+            },
+            "methodologies": {
+                "title": "Metodologías"
+            }
+        }
     },
     "projects": {
         "title": "Proyectos"

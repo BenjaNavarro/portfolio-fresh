@@ -83,6 +83,9 @@ export default {
       borderColor: {
         primary: "bg-[var(--text-color)]",
         secondary: "bg-[var(--background-color)]"
+      },
+      cursor: {
+        inherit: "cursor-[inherit]"
       }
       // margin: {
       //   'inline': 'margin-inline'

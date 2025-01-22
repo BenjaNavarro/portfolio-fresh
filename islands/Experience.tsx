@@ -11,7 +11,7 @@ export default function Experience({ ref }: ComponentProps) {
   const { dictionary, language } = useContext(LanguageContext);
   return (
     <Layout
-      title={`${dictionary.experience.title}:`}
+      title={`${dictionary.experience.title}`}
       ref={ref}
       children={
         <>

@@ -1,3 +1,5 @@
+import { ComponentType } from 'preact';
+
 // Define a custom type for the refs that includes the base property
 export type CustomRef = { base: HTMLElement | null };
 
@@ -27,16 +29,19 @@ export type Dictionary = {
     },
     skills: {
         title: string,
-        backend: string[],
-        frontend: string[],
-        "version-control": string[],
-        cloud: string[],
-        "programming-languages": string[],
-        design: string[],
-        "project-management": string[],
-        "soft-skills": string[],
-        "speaking-languages": string[],
-        methodologies: string[]
+        contents: SkillsContents,
+        // contents: {
+        //     "backend": ContentType,
+        //     "frontend": ContentType,
+        //     "version-control": ContentType,
+        //     "cloud": ContentType,
+        //     "programming-languages": ContentType,
+        //     "design": ContentType,
+        //     "project-management": ContentType,
+        //     "soft-skills": ContentType,
+        //     "speaking-languages": ContentType,
+        //     "methodologies": ContentType
+        // },
     },
     formation: {
         title: string,
@@ -67,6 +72,24 @@ export type Dictionary = {
         $fresh: string,
         rights: string,
     };
+};
+
+export type ContentType = {
+    title: string
+};
+
+export type SkillItem = {
+    text: string;
+    Icon: ComponentType<any>;
+    url: string;
+};
+  
+export type SkillsContents = {
+    [key: string]: ContentType;
+};
+
+export type SkillSet = {
+    [key: string]: SkillItem[];
 };
 
 export type LangType = "en" | "es";
