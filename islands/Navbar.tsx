@@ -37,8 +37,8 @@ export default function Navbar({
         BENJA
         <span class={`ml-2 animate-wiggle text-xl`}>💻</span>
       </h1>
-      <nav class="flex w-fit md:w-full justify-end md:justify-center">
-        <ul class="hidden lg:flex w-full gap-6 justify-end items-center">
+      <nav class="flex w-fit md:w-full justify-end lg:justify-center">
+        <ul class="hidden lg:flex w-full gap-6 justify-start items-center">
           {dictionary.navbar.NavOptions.map((option) => (
             <li 
               key={option.label}

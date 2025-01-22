@@ -45,7 +45,7 @@ export default function Contact({ ref }: ComponentProps) {
 
     return (
         <form 
-            class={`flex flex-col w-full justify-center items-center px-8 md:px-32 mt-16 md:mt-32 mb-8 gap-4`}
+            class={`flex flex-col w-full justify-center items-center xl:items-start px-8 md:px-32 mt-16 md:mt-32 mb-8 gap-4`}
             onSubmit={handleSubmit} 
             {...{ref}}
         >
@@ -54,7 +54,7 @@ export default function Contact({ ref }: ComponentProps) {
                 <input 
                     name={'user_name'}
                     id={'user_name'}
-                    class={`w-full lg:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
+                    class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="text"
                     value={formFields.user_name}
                     required
@@ -71,7 +71,7 @@ export default function Contact({ ref }: ComponentProps) {
                 <input 
                     name={'user_email'}
                     id={"user_email"}
-                    class={`w-full lg:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
+                    class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="email" 
                     required
                     onInput={handleChange}
@@ -86,7 +86,7 @@ export default function Contact({ ref }: ComponentProps) {
             </div>
             <div class={`flex flex-col w-full`}>
                 <textarea 
-                    class={`w-full lg:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer h-32 resize-none`}
+                    class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer h-32 resize-none`}
                     required
                     name={'message'}
                     id={'message'}
@@ -109,7 +109,7 @@ export default function Contact({ ref }: ComponentProps) {
             <button 
                 type="submit"
                 disabled={isSubmitting}
-                class={`w-full lg:w-1/4 p-2 rounded bg-[var(--text-color)] text-[var(--background-color)] hover:bg-neutral-800 dark:hover:bg-neutral-500`}
+                class={`w-full 2xl:w-1/3 p-2 rounded bg-[var(--text-color)] text-[var(--background-color)] hover:bg-neutral-800 dark:hover:bg-neutral-500`}
             >
                 {dictionary.contact.form.button}
             </button>
