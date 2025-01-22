@@ -33,16 +33,19 @@ export default function Navbar({
     <header
       class={`header`}
     >
-      <h1 class="w-auto flex items-center">
+      <h1 class="lg:hidden w-auto flex items-center">
         BENJA
         <span class={`ml-2 animate-wiggle text-xl`}>💻</span>
       </h1>
-      <nav class="flex w-fit justify-end">
-        <ul class="hidden md:flex w-full gap-6 justify-end">
+      <nav class="flex w-fit md:w-full justify-end md:justify-center">
+        <ul class="hidden lg:flex w-full gap-6 justify-end items-center">
           {dictionary.navbar.NavOptions.map((option) => (
             <li 
               key={option.label}
-              class={`hover:scale-105 hover:font-semibold dark:hover:border-b dark:border-[var(--text-color)] transition-all ease-in duration-300 hover:before:content-["..."] before:transition-all`}
+              class={`
+                hover:scale-105 hover:font-semibold dark:hover:border-b dark:border-[var(--text-color)] 
+                transition-all ease-in duration-300 hover:before:content-["..."] before:transition-all
+              `}
             >
               <button 
                 title={option.label}

@@ -12,6 +12,7 @@ import Express from "../components/Icons/Express.tsx";
 import Figma from "../components/Icons/Figma.tsx";
 import Firebase from "../components/Icons/Firebase.tsx";
 import Formik from "../components/Icons/Formik.tsx";
+import FreshJS from "../components/Icons/FreshJS.tsx";
 import GCP from "../components/Icons/GCP.tsx";
 import Git from "../components/Icons/Git.tsx";
 import Github from "../components/Icons/Github.tsx";
@@ -21,6 +22,7 @@ import Jira from "../components/Icons/Jira.tsx";
 import MongoDB from "../components/Icons/MongoDB.tsx";
 import Mongoose from "../components/Icons/Mongoose.tsx";
 import MySQL from "../components/Icons/MySQL.tsx";
+import NextJS from "../components/Icons/NextJS.tsx";
 import NodeJS from "../components/Icons/NodeJS.tsx";
 import PostgreSQL from "../components/Icons/PostgreSQL.tsx";
 import ProblemSolving from "../components/Icons/ProblemSolving.tsx";
@@ -55,6 +57,12 @@ export const skillSet: SkillSet = {
     "frontend": [
         {
             text: 'React.js', Icon: ReactJS, url: "https://react.dev"
+        },
+        {
+            text: 'Fresh.js', Icon: FreshJS, url: "https://fresh.deno.dev"
+        },
+        {
+            text: 'Next.js', Icon: NextJS, url: "https://nextjs.org"
         },
         {
             text: 'Angular', Icon: Angular, url: "https://angular.dev"
@@ -171,5 +179,4 @@ export const skillSet: SkillSet = {
             text: "English", Icon: UkUsa, url: "https://www.cambridgeenglish.org/learning-english/"
         },
     ]
-    // "soft-skills": ["Resolución de problemas", "Optimización de procesos"],
 };
