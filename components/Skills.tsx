@@ -6,7 +6,7 @@ import { SkillsContents } from "../types.d.ts";
 
 declare interface ComponentProps {
     ref: MutableRef<HTMLElement | null>;
-}
+};
 
 export default function Skills({
     ref
@@ -46,63 +46,6 @@ export default function Skills({
                     </div>
                 ))}
             </div>
-            {/* <div class={`flex flex-wrap justify-start gap-2 w-full`}>
-                {skillSet["backend"].map(({Icon, text, url}, index) => (
-                    <a 
-                        key={index}
-                        title={text}
-                        href={url}
-                    >
-                        <Icon class={`w-12 h-12 cursor-inherit`}/>
-                    </a>
-                ))}
-            </div>
-            <div class={`flex flex-wrap justify-start gap-2 w-full`}>
-                {skillSet["frontend"].map(({Icon, text, url}, index) => (
-                    <a 
-                        key={index}
-                        title={text}
-                        href={url}
-                    >
-                        <Icon class={`w-12 h-12 cursor-inherit`}/>
-                    </a>
-                ))}
-            </div>
-            <div class={`flex flex-wrap justify-start gap-2 w-full`}>
-                {skillSet["programming-languages"].map(({Icon, text, url}, index) => (
-                    <a 
-                        key={index}
-                        title={text}
-                        href={url}
-                    >
-                        <Icon class={`w-12 h-12 cursor-inherit`}/>
-                    </a>
-                ))}
-            </div>
-            <div class={`flex flex-wrap justify-start gap-2 w-full`}>
-                {skillSet["databases"].map(({Icon, text, url}, index) => (
-                    <a 
-                        key={index}
-                        title={text}
-                        label={text}
-                        href={url}
-                    >
-                        <Icon class={`w-12 h-12 cursor-inherit`}/>
-                    </a>
-                ))}
-            </div>
-            <div class={`flex flex-wrap justify-start gap-2 w-full`}>
-                {skillSet["speaking-languages"].map(({Icon, text, url}, index) => (
-                    <a 
-                        key={index}
-                        title={text}
-                        label={text}
-                        href={url}
-                    >
-                        <Icon class={`w-12 h-12 cursor-inherit`}/>
-                    </a>
-                ))}
-            </div> */}
         </Layout>
     );
 }
