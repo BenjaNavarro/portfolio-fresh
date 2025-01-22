@@ -26,7 +26,6 @@ export const LanguageProvider = ({ children }: { children: ComponentChildren }) 
 
     useEffect(() => {
         const langs = navigator.languages;
-        console.log({langs});
         if(langs[0].includes("es") || langs[0].includes("es-419")) {
           setLanguage("es");
         } else setLanguage("en");
