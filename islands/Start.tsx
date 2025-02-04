@@ -16,14 +16,19 @@ export default function Start({ ref }: ComponentProps) {
       class={`min-h-[calc(100vh-10vh)] md:min-h-[calc(100vh-12vh)] lg:min-h-[calc(100vh-18vh)] xl:min-h-[calc(100vh-16vh)] flex justify-center items-center w-full p-[12%] mb-10`}
       ref={ref}
     >
-      <code 
-        class={'type text-4xl text-left'}
-        style={{
-          '--n': `${totalLength}`,
-        }}
-      >
-        {nameString} {dictionary.start.greet}
-      </code>
+      {/**
+       * This <div/> avoids the the typing animation to use the full heigth of the screen.
+       */}
+      <div>
+        <code 
+          class={'type text-4xl text-left select-none'}
+          style={{
+            '--n': `${totalLength}`,
+          }}
+        >
+          {nameString} {dictionary.start.greet}
+        </code>
+      </div>
     </section>
   );
 }
