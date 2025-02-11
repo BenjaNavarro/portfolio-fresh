@@ -2,12 +2,13 @@ import { MutableRef, useContext, useState } from "preact/hooks";
 import emailjs from '@emailjs/browser';
 
 import { LanguageContext } from "../context/languageContext.tsx";
+import { ConfirmationAlert, ErrorAlert, LoadingAlert, SuccessAlert } from "../utils/Alerts.tsx";
 declare interface ComponentProps {
     ref: MutableRef<HTMLFormElement | null>;
 };
 
 export default function Contact({ ref }: ComponentProps) {
-    const { dictionary } = useContext(LanguageContext);
+    const { dictionary, language } = useContext(LanguageContext);
     const [formFields, setFormFields] = useState({
         user_name: '',
         user_email: '',
@@ -24,23 +25,39 @@ export default function Contact({ ref }: ComponentProps) {
         }));
     }
 
-    const handleSubmit = async(e: SubmitEvent) => {
+    const handleSubmit = (e: SubmitEvent) => {
         setIsSubmitting(true);
         e.preventDefault();
         const formParent = e.submitter?.parentElement as HTMLFormElement;
 
-        await emailjs
-            .sendForm('service_rcenz4i', 'template_tumip9o', formParent , {
-                publicKey: 'tUo1mvYob1Xb4AeRG',
-            })
-            .then(
-                (res: unknown) => {                    
-                    console.log('SUCCESS?', res);
-                },
-                (error) => {
-                    console.log('FAILED...', error);
-                },
-            ).finally(() => setIsSubmitting(false));
+        ConfirmationAlert(
+            language === 'en' ? 'You will receive a response as soon as possible.' : 'Recibirás una respuesta lo antes posible.',
+            language === 'en' ? 'Confirmation' : 'Confirmación',
+        )
+            .fire()
+            .then(async(res) => {
+                if(res.isConfirmed){
+                    LoadingAlert();
+                    await emailjs
+                        // for some reason I cannot use Deno.env.get('EMAILJS_USER_ID'), I get Deno is undefined
+                        .sendForm('service_rcenz4i', 'template_tumip9o', formParent , {
+                            publicKey: 'tUo1mvYob1Xb4AeRG',
+                        })
+                        .then(
+                            (res: unknown) => {                    
+                                console.log('SUCCESS?', res);
+                                SuccessAlert().fire();
+                                const formParent = ref.current as HTMLFormElement;
+                                formParent.reset();
+                            },
+                            (error) => {
+                                ErrorAlert().fire();
+                                console.log('FAILED...', error);
+                            },
+                        ).finally(() => setIsSubmitting(false));
+
+                }
+            });
     };
 
     return (
@@ -49,6 +66,42 @@ export default function Contact({ ref }: ComponentProps) {
             onSubmit={handleSubmit} 
             {...{ref}}
         >
+            <button 
+                type={`button`}
+                onClick={() => {
+                    ConfirmationAlert(
+                        language === 'en' ? 'You will receive a response as soon as possible.' : 'Recibirás una respuesta lo antes posible.',
+                        language === 'en' ? 'Confirmation' : 'Confirmación',
+                    )
+                        .fire(); 
+                }}
+            >
+                Confirm
+            </button>
+            <button 
+                type={`button`}
+                onClick={() => {
+                    ErrorAlert().fire();        
+                }}
+            >
+                Error
+            </button>
+            <button
+                type={`button`}
+                onClick={() => {
+                    SuccessAlert().fire();
+                }}
+            >
+                Success
+            </button>
+            <button
+                type={`button`}
+                onClick={() => {
+                    LoadingAlert();
+                }}
+            >
+                Loading
+            </button>
             <h2 class={`text-left w-full text-2xl font-semibold my-4 after:content-[':']`}>{dictionary.contact.title}</h2>
             <div class={`flex flex-col w-full`}>
                 <input 
@@ -101,7 +154,7 @@ export default function Contact({ ref }: ComponentProps) {
                     {dictionary.contact.form.message}
                 </label>
                 <span
-                    class={`text-xs ${formFields.message.length > 300 ? 'text-red-500': ''}`}
+                    class={`text-xs ${formFields.message.length >= 300 ? 'text-red-500': ''}`}
                 >
                     {`${formFields.message.length}/300`}
                 </span>
