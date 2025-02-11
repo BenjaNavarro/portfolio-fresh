@@ -66,7 +66,7 @@ export default function Contact({ ref }: ComponentProps) {
             onSubmit={handleSubmit} 
             {...{ref}}
         >
-            <button 
+            {/* <button 
                 type={`button`}
                 onClick={() => {
                     ConfirmationAlert(
@@ -101,7 +101,7 @@ export default function Contact({ ref }: ComponentProps) {
                 }}
             >
                 Loading
-            </button>
+            </button> */}
             <h2 class={`text-left w-full text-2xl font-semibold my-4 after:content-[':']`}>{dictionary.contact.title}</h2>
             <div class={`flex flex-col w-full`}>
                 <input 
