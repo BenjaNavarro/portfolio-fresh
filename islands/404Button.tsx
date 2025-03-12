@@ -5,6 +5,7 @@ export default function Button() {
 
     return (
         <button 
+            type={`button`}
             onClick={handleClick}
             class={`text-lg border-b border-primary font-bold hover:scale-110 transition-transform`}
         >

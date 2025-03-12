@@ -48,6 +48,7 @@ export default function Navbar({
               `}
             >
               <button 
+                type={`button`}
                 title={option.label}
                 name={option.name} 
                 onClick={handleScroll}
@@ -75,6 +76,8 @@ export default function Navbar({
             {dictionary.navbar.NavOptions.map((option) => (
               <li key={option.label}>
                 <button 
+                  type={`button`}
+                  title={option.label}
                   name={option.name} 
                   onClick={handleScroll}
                   class="w-full text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
@@ -84,6 +87,8 @@ export default function Navbar({
             <li>
               <div class={`flex items-center`}>
                 <button
+                  type={`button`}
+                  title={dictionary.navbar.theme}
                   class="flex items-center justify-start w-auto text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
                   aria-label="Toggle Dark Mode"
                   onClick={toggleTheme}
@@ -96,6 +101,8 @@ export default function Navbar({
                   }
                 </button>
                 <button
+                  type={`button`}
+                  title={dictionary.navbar.lang}
                   class="flex items-center justify-start w-auto text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
                   aria-label="Toggle Language"
                   onClick={toggleLanguage}
@@ -110,6 +117,7 @@ export default function Navbar({
       </dialog>
       <div class="hidden md:flex items-center gap-2">
         <button 
+          type={`button`}
           class={`flex items-center p-1 gap-1 font-semibold`}
           onClick={toggleLanguage}
           title={dictionary.navbar.lang}
@@ -118,6 +126,7 @@ export default function Navbar({
           {language.toUpperCase()}
         </button>
         <button
+          type={`button`}
           class="w-8 p-1 m-1 flex items-center justify-center"
           aria-label={dictionary.navbar.theme}
           title={dictionary.navbar.theme}

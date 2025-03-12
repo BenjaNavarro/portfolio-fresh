@@ -33,11 +33,12 @@ export default function Contact({ ref }: ComponentProps) {
         ConfirmationAlert(
             language === 'en' ? 'You will receive a response as soon as possible.' : 'Recibirás una respuesta lo antes posible.',
             language === 'en' ? 'Confirmation' : 'Confirmación',
+            language,
         )
             .fire()
             .then(async(res) => {
                 if(res.isConfirmed){
-                    LoadingAlert();
+                    LoadingAlert(language);
                     await emailjs
                         // for some reason I cannot use Deno.env.get('EMAILJS_USER_ID'), I get Deno is undefined
                         .sendForm('service_rcenz4i', 'template_tumip9o', formParent , {
@@ -46,12 +47,20 @@ export default function Contact({ ref }: ComponentProps) {
                         .then(
                             (res: unknown) => {                    
                                 console.log('SUCCESS?', res);
-                                SuccessAlert().fire();
+                                SuccessAlert(
+                                    language === "es" ? "Éxito" : "Success",
+                                    language === "es" ? "Correo enviado" : "Mail sent",
+                                    language,
+                                ).fire();
                                 const formParent = ref.current as HTMLFormElement;
                                 formParent.reset();
                             },
                             (error) => {
-                                ErrorAlert().fire();
+                                ErrorAlert(
+                                    language === 'en' ? 'An error ocurred' : 'Ocurrió un error.',
+                                    "Ok",
+                                    ':(',
+                                ).fire();
                                 console.log('FAILED...', error);
                             },
                         ).finally(() => setIsSubmitting(false));
@@ -66,47 +75,11 @@ export default function Contact({ ref }: ComponentProps) {
             onSubmit={handleSubmit} 
             {...{ref}}
         >
-            {/* <button 
-                type={`button`}
-                onClick={() => {
-                    ConfirmationAlert(
-                        language === 'en' ? 'You will receive a response as soon as possible.' : 'Recibirás una respuesta lo antes posible.',
-                        language === 'en' ? 'Confirmation' : 'Confirmación',
-                    )
-                        .fire(); 
-                }}
-            >
-                Confirm
-            </button>
-            <button 
-                type={`button`}
-                onClick={() => {
-                    ErrorAlert().fire();        
-                }}
-            >
-                Error
-            </button>
-            <button
-                type={`button`}
-                onClick={() => {
-                    SuccessAlert().fire();
-                }}
-            >
-                Success
-            </button>
-            <button
-                type={`button`}
-                onClick={() => {
-                    LoadingAlert();
-                }}
-            >
-                Loading
-            </button> */}
             <h2 class={`text-left w-full text-2xl font-semibold my-4 after:content-[':']`}>{dictionary.contact.title}</h2>
             <div class={`flex flex-col w-full`}>
                 <input 
-                    name={'user_name'}
-                    id={'user_name'}
+                    name='user_name'
+                    id='user_name'
                     class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="text"
                     value={formFields.user_name}
@@ -122,8 +95,8 @@ export default function Contact({ ref }: ComponentProps) {
             </div>
             <div class={`flex flex-col w-full`}>
                 <input 
-                    name={'user_email'}
-                    id={"user_email"}
+                    name='user_email'
+                    id="user_email"
                     class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer`}
                     type="email" 
                     required
@@ -141,8 +114,8 @@ export default function Contact({ ref }: ComponentProps) {
                 <textarea 
                     class={`w-full 2xl:w-1/3 p-2 focus:outline-none border-b border-[var(--text-color)] bg-[var(--background-color)] peer h-32 resize-none`}
                     required
-                    name={'message'}
-                    id={'message'}
+                    name='message'
+                    id='message'
                     onInput={handleChange}
                     maxlength={300}
                     value={formFields.message}

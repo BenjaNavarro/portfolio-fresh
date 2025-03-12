@@ -9,7 +9,6 @@ import * as $index from "./routes/index.tsx";
 import * as $_404Button from "./islands/404Button.tsx";
 import * as $About from "./islands/About.tsx";
 import * as $Contact from "./islands/Contact.tsx";
-import * as $Counter from "./islands/Counter.tsx";
 import * as $Experience from "./islands/Experience.tsx";
 import * as $MainLand from "./islands/MainLand.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
@@ -27,7 +26,6 @@ const manifest = {
     "./islands/404Button.tsx": $_404Button,
     "./islands/About.tsx": $About,
     "./islands/Contact.tsx": $Contact,
-    "./islands/Counter.tsx": $Counter,
     "./islands/Experience.tsx": $Experience,
     "./islands/MainLand.tsx": $MainLand,
     "./islands/Navbar.tsx": $Navbar,
