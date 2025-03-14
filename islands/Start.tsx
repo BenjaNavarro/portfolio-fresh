@@ -21,7 +21,7 @@ export default function Start({ ref }: ComponentProps) {
        * This <div/> avoids the the typing animation to use the full heigth of the screen.
        */}
         <code 
-          class={'type text-4xl text-left select-none'}
+          class={`type text-4xl text-left select-none`}
           style={{
             '--n': `${totalLength}`,
           }}

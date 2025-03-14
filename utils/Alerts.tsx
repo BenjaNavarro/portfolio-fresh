@@ -80,7 +80,6 @@ export const ErrorAlert = (
 	texto: string = 'Error',
 	buttonText: string = 'Continuar',
 	title: string = 'Error',
-	// lang: LangType
 ) => {
 
 	const theme = globalThis?.document.documentElement.classList.contains('dark') ? 'dark' : 'light';

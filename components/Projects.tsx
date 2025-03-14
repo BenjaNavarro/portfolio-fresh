@@ -2,6 +2,7 @@ import { MutableRef, useContext } from "preact/hooks";
 import Layout from "./Layout.tsx";
 import { LanguageContext } from "../context/languageContext.tsx";
 import ProjectItem from "./ProjectItem.tsx";
+// import portfolioImg from "portfolio.png" with { type: "module" };
 
 declare interface ComponentProps {
     ref: MutableRef<HTMLElement | null>;
@@ -33,7 +34,7 @@ export default function Projects({
                 es: "Mi sitio web personal."
             },
             stack: [ "Fresh.js", "TypeScript", "TailwindCSS" ],
-            // image: "https://via.placeholder.com/150"
+            image: "portfolio.png"
         }
     ];
 
