@@ -32,6 +32,7 @@ export default function ExperienceItem({
             <div class={`flex flex-col md:flex-row w-full md:justify-between justify-center items-start md:items-center border-b-[3px] p-1 border-[var(--text-color)]`}>
                 <div class={`gap-1 flex items-center`}>
                     <button 
+                        type={`button`}
                         class={`hidden md:flex text-3xl font-bold hover:animate-bounce`} 
                         onClick={toggleShow}
                         title={`${show ? '': ''}`}
@@ -46,6 +47,7 @@ export default function ExperienceItem({
                 <span class={`text-sm md:text-lg text-left md:text-right`}>{item.subtitle}</span>
             </div>
             <button 
+                type={`button`}
                 class={`md:hidden self-start`}
                 onClick={toggleShow}
             >

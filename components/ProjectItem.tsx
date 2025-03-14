@@ -34,9 +34,7 @@ export default function ProjectItem({
                     loading={`lazy`} 
                     alt={`mockup`}
                     class={`w-full h-48 object-cover object-top rounded-sm group-hover:scale-105 transition-transform duration-300 group-hover:border`}
-                >
-
-                </img>
+                />
             </div>
             <div class={`w-full flex flex-col gap-2`}>
                 <div class={`flex justify-between items-center`}>
