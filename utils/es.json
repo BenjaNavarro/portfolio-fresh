@@ -86,6 +86,9 @@
             },
             "methodologies": {
                 "title": "Metodologías"
+            },
+            "databases": {
+                "title": "Bases de datos"
             }
         }
     },
