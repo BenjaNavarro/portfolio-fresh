@@ -1,3 +1,4 @@
+import { SkillSet } from "../types.d.ts";
 import AdobeXD from "../components/Icons/AdobeXD.tsx";
 import Agile from "../components/Icons/Agile.tsx";
 import Angular from "../components/Icons/Angular.tsx";
@@ -37,7 +38,8 @@ import Supabase from "../components/Icons/Supabase.tsx";
 import TailwindCSS from "../components/Icons/TailwindCSS.tsx";
 import TypeScript from "../components/Icons/TypeScript.tsx";
 import UkUsa from "../components/Icons/UkUsa.tsx";
-import { SkillSet } from "../types.d.ts";
+import Wordpress from "../components/Icons/Wordpress.tsx";
+import TeamWork from "../components/Icons/TeamWork.tsx";
 
 export const skillSet: SkillSet = {
     "backend": [
@@ -76,6 +78,9 @@ export const skillSet: SkillSet = {
         {
             text: 'Formik', Icon: Formik, url: "https://formik.org"
         },
+        {
+            text: 'WordPress', Icon: Wordpress, url: "https://wordpress.org"
+        }
     ],
     "programming-languages": [
         {
@@ -162,6 +167,9 @@ export const skillSet: SkillSet = {
         {
             text: 'Process optimization', Icon: ProcessOptimization, url: ""
         },
+        {
+            text: 'Team work', Icon: TeamWork, url: ""
+        }
     ],
     "methodologies": [
         {
