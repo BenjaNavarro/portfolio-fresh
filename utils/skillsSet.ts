@@ -1,4 +1,4 @@
-import { SkillSet } from "../types.d.ts";
+import { type SkillSet } from "../types.d.ts";
 import AdobeXD from "../components/Icons/AdobeXD.tsx";
 import Agile from "../components/Icons/Agile.tsx";
 import Angular from "../components/Icons/Angular.tsx";
@@ -40,6 +40,12 @@ import TypeScript from "../components/Icons/TypeScript.tsx";
 import UkUsa from "../components/Icons/UkUsa.tsx";
 import Wordpress from "../components/Icons/Wordpress.tsx";
 import TeamWork from "../components/Icons/TeamWork.tsx";
+import PHP from "../components/Icons/PHP.tsx";
+import DJango from "../components/Icons/DJango.tsx";
+import HTML from "../components/Icons/HTML.tsx";
+import CSS from "../components/Icons/CSS.tsx";
+import GitLab from "../components/Icons/GitLab.tsx";
+import Deno from "../components/Icons/Deno.tsx";
 
 export const skillSet: SkillSet = {
     "backend": [
@@ -50,10 +56,16 @@ export const skillSet: SkillSet = {
             text: 'Express', Icon: Express, url: "https://expressjs.com"
         },
         {
+            text: 'Deno', Icon: Deno, url: "https://deno.land"
+        },
+        {
             text: 'Ruby on Rails', Icon: RubyOnRails, url: "https://rubyonrails.org"
         },
         {
             text: 'Mongoose', Icon: Mongoose, url: "https://mongoosejs.com"
+        },
+        {
+            text: 'DJango', Icon: DJango, url: "https://www.djangoproject.com"
         }
     ],
     "frontend": [
@@ -61,13 +73,19 @@ export const skillSet: SkillSet = {
             text: 'React.js', Icon: ReactJS, url: "https://react.dev"
         },
         {
+            text: 'Angular', Icon: Angular, url: "https://angular.dev"
+        },
+        {
+            text: 'HTML5', Icon: HTML, url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
+        },
+        {
+            text: 'CSS3', Icon: CSS, url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        },
+        {
             text: 'Fresh.js', Icon: FreshJS, url: "https://fresh.deno.dev"
         },
         {
             text: 'Next.js', Icon: NextJS, url: "https://nextjs.org"
-        },
-        {
-            text: 'Angular', Icon: Angular, url: "https://angular.dev"
         },
         {
             text: 'TailwindCSS', Icon: TailwindCSS, url: "https://tailwindcss.com"
@@ -93,11 +111,14 @@ export const skillSet: SkillSet = {
             text: 'Python', Icon: Python, url: "https://www.python.org"
         },
         {
+            text: 'PHP', Icon: PHP, url: "https://www.php.net"
+        },
+        {
             text: 'Java', Icon: Java, url: "https://docs.oracle.com/javase/8/docs/technotes/guides/language/"
         },
         {
             text: 'C', Icon: CLang, url: "https://clang.llvm.org"
-        }
+        },
     ],
     "databases": [
         {
@@ -119,6 +140,9 @@ export const skillSet: SkillSet = {
         },
         {
             text: 'Github', Icon: Github, url: "https://github.com"
+        },
+        {
+            text: 'GitLab', Icon: GitLab, url: "https://about.gitlab.com"
         },
         {
             text: 'Bitbucket', Icon: Bitbucket, url: "https://bitbucket.org/product/"

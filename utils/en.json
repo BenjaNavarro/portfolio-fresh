@@ -25,6 +25,12 @@
         "exp": [
             {
                 "title": "Fullstack developer",
+                "subtitle": "Bibliotecas UC | May 2025 - Present",
+                "description": "Responsible for integrating solutions within the academic and archival domain using technologies such as Angular, TypeScript, Symfony, Django, and WordPress. My main focus is building scalable applications and customized platforms tailored to institutional needs while ensuring system interoperability. I contributed to the creation of user-friendly interfaces, backend optimization, and the integration of third-party tools to improve accessibility, performance, and security.",
+                "learn-more": "https://bibliotecas.uc.cl"
+            },
+            {
+                "title": "Fullstack developer",
                 "subtitle": "Subcargo | april 2023 - august 2024",
                 "description": "In this role, I was responsible for the development and maintenance of services using Node.js, MongoDB, Express, and Mongoose for the backend, while implementing solutions on the frontend with React.js and TailwindCSS. I actively participated in the full development lifecycle, from planning to implementation, ensuring high-quality code and improving system scalability. Additionally, I optimized processes and resolved complex technical issues to ensure the stability and performance of the products.",
                 "learn-more": "https://subcargo.com/home"
