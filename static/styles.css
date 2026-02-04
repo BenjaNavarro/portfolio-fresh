@@ -26,19 +26,50 @@ body {
 .type {
   color:#0000;
   background: linear-gradient(-90deg,var(--text-color) 5px,#0000 0) 10px 0, linear-gradient(var(--text-color) 0 0) 0 0;
-  background-size:calc(var(--n)*1ch) 200%;
-  -webkit-background-clip:padding-box,text;
-  background-clip:padding-box,text;
-  background-repeat:no-repeat;
+  background-size: calc(var(--n)*1ch) 200%;
+  -webkit-background-clip: padding-box,text;
+  background-clip: padding-box,text;
+  background-repeat: no-repeat;
   animation: b .7s infinite steps(1), t calc(var(--n)*.1s) steps(var(--n)) forwards;
 }
 
-@keyframes t{
-  from {background-size:0 200%}
+@keyframes t {
+  from {
+    background-size: 0 200%
+  }
 }
 
-@keyframes b{
-  50% {background-position:0 -100%,0 0}
+@keyframes b {
+  50% {
+    background-position: 0 -100%,0 0
+  }
+}
+
+.ascii-bg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(var(--width, 120), 1fr);
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+
+  /* Centrado */
+  top: 60%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.ascii-bg span {
+  display: block;
+  text-align: center;
 }
 
 @layer components {
