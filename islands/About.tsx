@@ -1,13 +1,7 @@
-import { MutableRef, useContext } from "preact/hooks";
-import { LanguageContext } from "../context/languageContext.tsx";
 import Layout from "../components/Layout.tsx";
+import { Dictionary } from "../types.d.ts";
 
-declare interface ComponentProps {
-  ref: MutableRef<HTMLElement | null>;
-}
-
-export default function About({ ref }: ComponentProps) {
-  const { dictionary } = useContext(LanguageContext);
+export default function About({ dictionary, id }: { dictionary: Dictionary; id?: string }) {
 
   const parts = dictionary.about.paragraph.split(" ");
   const keyWords = [
@@ -23,7 +17,7 @@ export default function About({ ref }: ComponentProps) {
   return (
     <Layout
       title={dictionary.about.title}
-      ref={ref}
+      id={id}
       class={`gap-0`}
     >
       <span class={`w-full text-left text-lg`}>{`{`}</span>

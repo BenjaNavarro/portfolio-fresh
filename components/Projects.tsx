@@ -1,17 +1,9 @@
-import { MutableRef, useContext } from "preact/hooks";
+import { Dictionary } from "../types.d.ts";
 import Layout from "./Layout.tsx";
-import { LanguageContext } from "../context/languageContext.tsx";
 import ProjectItem from "./ProjectItem.tsx";
 // import portfolioImg from "portfolio.png" with { type: "module" };
 
-declare interface ComponentProps {
-    ref: MutableRef<HTMLElement | null>;
-}
-
-export default function Projects({
-    ref
-}: ComponentProps) {
-    const { dictionary } = useContext(LanguageContext);
+export default function Projects({ dictionary }: { dictionary: Dictionary }) {
 
     const ProjectsList = [
         // {
@@ -41,7 +33,6 @@ export default function Projects({
     return (
         <Layout
             title={dictionary.projects.title}
-            ref={ref}
         >
             <div class={`flex flex-wrap w-full justify-start items-center gap-8`}>
                 {ProjectsList.map((project, index) => (

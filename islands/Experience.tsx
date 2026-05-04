@@ -1,18 +1,12 @@
-import { MutableRef, useContext } from "preact/hooks";
-import { LanguageContext } from "../context/languageContext.tsx";
 import ExperienceItem from "../components/ExperienceItem.tsx";
 import Layout from "../components/Layout.tsx";
+import { Dictionary, LangType } from "../types.d.ts";
 
-declare interface ComponentProps {
-  ref: MutableRef<HTMLElement | null>;
-}
-
-export default function Experience({ ref }: ComponentProps) {
-  const { dictionary, language } = useContext(LanguageContext);
+export default function Experience({ dictionary, language, id }: { dictionary: Dictionary; language: LangType; id?: string }) {
   return (
     <Layout
       title={`${dictionary.experience.title}`}
-      ref={ref}
+      id={id}
     >
       <ul class={`w-full`}>
         {dictionary.experience.exp.map((item, index) => (

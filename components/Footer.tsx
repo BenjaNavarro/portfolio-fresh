@@ -1,11 +1,10 @@
-import { useContext } from "preact/hooks";
 import Github from "./Icons/Github.tsx";
 import Linkedin from "./Icons/Linkedin.tsx";
-import { LanguageContext } from "../context/languageContext.tsx";
 import Download from "./Icons/Download.tsx";
+import { Dictionary } from "../types.d.ts";
 
-export default function Footer() {
-  const { dictionary } = useContext(LanguageContext);
+export default function Footer({ dictionary }: { dictionary: Dictionary }) {
+  
   return (
     <footer class="flex flex-col items-center w-full p-4 gap-2 bg-neutral-300 border-t border-neutral-400 dark:bg-neutral-700 dark:border-neutral-600 dark:border-t-[var(--text-color)]">
       <a

@@ -1,14 +1,14 @@
-import { MutableRef, useContext, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import emailjs from '@emailjs/browser';
 
-import { LanguageContext } from "../context/languageContext.tsx";
 import { ConfirmationAlert, ErrorAlert, LoadingAlert, SuccessAlert } from "../utils/Alerts.tsx";
+import { Dictionary, LangType } from "../types.d.ts";
 declare interface ComponentProps {
-    ref: MutableRef<HTMLFormElement | null>;
+    dictionary: Dictionary;
+    language: LangType;
 };
 
-export default function Contact({ ref }: ComponentProps) {
-    const { dictionary, language } = useContext(LanguageContext);
+export default function Contact({ dictionary, language }: ComponentProps) {
     const [formFields, setFormFields] = useState({
         user_name: '',
         user_email: '',
@@ -28,7 +28,7 @@ export default function Contact({ ref }: ComponentProps) {
     const handleSubmit = (e: SubmitEvent) => {
         setIsSubmitting(true);
         e.preventDefault();
-        const formParent = e.submitter?.parentElement as HTMLFormElement;
+        const formTarget = e.target as HTMLFormElement;
 
         ConfirmationAlert(
             language === 'en' ? 'You will receive a response as soon as possible.' : 'Recibirás una respuesta lo antes posible.',
@@ -41,7 +41,7 @@ export default function Contact({ ref }: ComponentProps) {
                     LoadingAlert(language);
                     await emailjs
                         // for some reason I cannot use Deno.env.get('EMAILJS_USER_ID'), I get Deno is undefined
-                        .sendForm('service_rcenz4i', 'template_tumip9o', formParent , {
+                        .sendForm('service_rcenz4i', 'template_tumip9o', formTarget , {
                             publicKey: 'tUo1mvYob1Xb4AeRG',
                         })
                         .then(
@@ -52,8 +52,7 @@ export default function Contact({ ref }: ComponentProps) {
                                     language === "es" ? "Correo enviado" : "Mail sent",
                                     language,
                                 ).fire();
-                                const formParent = ref.current as HTMLFormElement;
-                                formParent.reset();
+                                formTarget.reset();
                             },
                             (error) => {
                                 ErrorAlert(
@@ -72,8 +71,8 @@ export default function Contact({ ref }: ComponentProps) {
     return (
         <form 
             class={`flex flex-col w-full justify-center items-center xl:items-start px-8 md:px-32 mt-16 md:mt-32 mb-8 gap-4`}
+            id="contact"
             onSubmit={handleSubmit} 
-            {...{ref}}
         >
             <h2 class={`text-left w-full text-2xl font-semibold my-4 after:content-[':']`}>{dictionary.contact.title}</h2>
             <div class={`flex flex-col w-full`}>

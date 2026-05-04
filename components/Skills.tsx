@@ -27,7 +27,7 @@ export default function Skills({
                         <span 
                             class={`text-nowrap text-left w-full 2xl:w-1/2 after:content-[':']`}
                         >{skillsContents[key].title}</span>
-                        <ul class={`flex w-full 2xl:w-1/2 items-center justify-start 2xl:justify-end gap-2 p-2`}>
+                        <ul class={`flex w-full 2xl:w-1/2 items-center justify-start flex-wrap 2xl:justify-end gap-2 p-2`}>
                             {skillSet[key].map((skill, index) => (
                                 <li key={index} class={`w-auto`}>
                                     <a 

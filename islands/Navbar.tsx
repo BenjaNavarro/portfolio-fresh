@@ -1,32 +1,43 @@
-import { useContext, useRef, useState } from 'preact/hooks';
+import { useRef, useState, useEffect } from 'preact/hooks';
 
 import HamburguerBtn from "../components/HamburguerBtn.tsx";
 import Dark from "../components/Icons/Dark.tsx";
 import Light from "../components/Icons/Light.tsx";
 import { useOutsideClickClose } from "../hooks/handleClickOutside.tsx";
-import { LanguageContext } from "../context/languageContext.tsx";
 import Language from "../components/Icons/Language.tsx";
+import { Dictionary, LangType } from "../types.d.ts";
 
-declare interface ComponentProps {
-  handleScroll: (e: Event) => void;
-};
-
-export default function Navbar({
-  handleScroll,
-}: ComponentProps) {
+export default function Navbar({ dictionary, language }: { dictionary: Dictionary; language: LangType }) {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const { language, setLanguage, dictionary } = useContext(LanguageContext);
-  const [currentTheme, setCurrentTheme] = useState<boolean>(globalThis?.document?.documentElement?.classList?.contains("dark"));
+  // Iniciamos en falso para evitar discrepancias de SSR
+  const [currentTheme, setCurrentTheme] = useState<boolean>(false);
 
   useOutsideClickClose(dialogRef);
 
+  useEffect(() => {
+    // Revisamos primero si hay un tema guardado manualmente
+    const storedTheme = globalThis.localStorage?.getItem("theme");
+    const prefersDark = globalThis.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+    
+    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+      globalThis.document.documentElement.classList.add("dark");
+      setCurrentTheme(true);
+    } else {
+      globalThis.document.documentElement.classList.remove("dark");
+      setCurrentTheme(false);
+    }
+  }, []);
+
   const toggleTheme = () => {
-    globalThis.document.documentElement.classList.toggle("dark");
-    setCurrentTheme(!currentTheme);
+    const isDark = globalThis.document.documentElement.classList.toggle("dark");
+    setCurrentTheme(isDark);
+    globalThis.localStorage?.setItem("theme", isDark ? "dark" : "light");
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === "en" ? "es" : "en");
+    // Guardamos la preferencia en una cookie para que _middleware.ts la lea y recargamos
+    document.cookie = `lang=${language === "en" ? "es" : "en"}; path=/`;
+    globalThis.location.reload();
   };
 
   return (
@@ -47,12 +58,10 @@ export default function Navbar({
                 transition-all ease-in duration-300 hover:before:content-["..."] before:transition-all
               `}
             >
-              <button 
-                type={`button`}
+            <a 
                 title={option.label}
-                name={option.name} 
-                onClick={handleScroll}
-              >{option.label}</button>
+              href={`#${option.name}`}
+            >{option.label}</a>
             </li>
           ))}
         </ul>
@@ -75,13 +84,12 @@ export default function Navbar({
           <ul class="flex flex-col font-medium mt-4 gap-2">
             {dictionary.navbar.NavOptions.map((option) => (
               <li key={option.label}>
-                <button 
-                  type={`button`}
+            <a 
                   title={option.label}
-                  name={option.name} 
-                  onClick={handleScroll}
-                  class="w-full text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
-                >{option.label}</button>
+              href={`#${option.name}`} 
+              onClick={() => dialogRef.current?.close()}
+              class="block w-full text-left text-[var(--text-color)] hover:bg-[var(--text-color)] hover:text-[var(--background-color)] p-2 rounded-lg"
+            >{option.label}</a>
               </li>
             ))}
             <li>
